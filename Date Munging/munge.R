@@ -557,22 +557,91 @@ rota2$country2[grep("imbab",rota2$country)] <- "Zimbabwe"
 
 # DATE ####
 
-rota2$collection_date2 <- ""
-
 # for testing
 # table(rota2$collection_date[grep("^\\d{4}$",rota2$collection_date)],exclude=NULL)
 # table(rota2$collection_date[grep("\\-\\d{4}$",rota2$collection_date)],exclude=NULL)
 
+# properly formatted
 # year only
-rota2$collection_date2[grep("^\\d{4}$",rota2$collection_date)]<- rota2$collection_date[grep("^\\d{4}$",rota2$collection_date)] 
-
+# rota2$collection_date2[grep("^\\d{4}$",rota2$collection_date)]<- rota2$collection_date[grep("^\\d{4}$",rota2$collection_date)] 
 # year + month and date
-rota2$collection_date2[grep("\\-\\d{4}$",rota2$collection_date)]<- rota2$collection_date[grep("\\-\\d{4}$",rota2$collection_date)] 
+# rota2$collection_date2[grep("\\-\\d{4}$",rota2$collection_date)]<- rota2$collection_date[grep("\\-\\d{4}$",rota2$collection_date)] 
+
+# grabbing for year, month, date separately
+# year
+rota2$year <- "0000"
+y <- 1958
+while (y < 2016)
+{
+  rota2$year[grep(y,rota2$collection_date)] <- paste(y)
+  rota2$year[grep(y,rota2$organism)] <- paste(y)
+  rota2$year[grep(y,rota2$note)] <- paste(y) # if a range is given, it will take the END year
+  rota2$year[grep(y,rota2$host)] <- paste(y)
+  y=y+1
+}
+#table(rota2$year)
+
+# month
+rota2$month <- "00"
+rota2$month[grep("Jan",ignore.case = TRUE,rota2$collection_date)]<- "01"
+rota2$month[grep("Feb",ignore.case = TRUE,rota2$collection_date)]<- "02"
+rota2$month[grep("Mar",ignore.case = TRUE,rota2$collection_date)]<- "03"
+rota2$month[grep("Apr",ignore.case = TRUE,rota2$collection_date)]<- "04"
+rota2$month[grep("May",ignore.case = TRUE,rota2$collection_date)]<- "05"
+rota2$month[grep("Jun",ignore.case = TRUE,rota2$collection_date)]<- "06"
+rota2$month[grep("Jul",ignore.case = TRUE,rota2$collection_date)]<- "07"
+rota2$month[grep("Aug",ignore.case = TRUE,rota2$collection_date)]<- "08"
+rota2$month[grep("Sep",ignore.case = TRUE,rota2$collection_date)]<- "09"
+rota2$month[grep("Oct",ignore.case = TRUE,rota2$collection_date)]<- "10"
+rota2$month[grep("Nov",ignore.case = TRUE,rota2$collection_date)]<- "11"
+rota2$month[grep("Dec",ignore.case = TRUE,rota2$collection_date)]<- "12"
+
+rota2$month[grep("^\\d{4}-01",rota2$collection_date)]<- "01"
+rota2$month[grep("^\\d{4}-02",rota2$collection_date)]<- "02"
+rota2$month[grep("^\\d{4}-03",rota2$collection_date)]<- "03"
+rota2$month[grep("^\\d{4}-04",rota2$collection_date)]<- "04"
+rota2$month[grep("^\\d{4}-05",rota2$collection_date)]<- "05"
+rota2$month[grep("^\\d{4}-06",rota2$collection_date)]<- "06"
+rota2$month[grep("^\\d{4}-07",rota2$collection_date)]<- "07"
+rota2$month[grep("^\\d{4}-08",rota2$collection_date)]<- "08"
+rota2$month[grep("^\\d{4}-09",rota2$collection_date)]<- "09"
+rota2$month[grep("^\\d{4}-10",rota2$collection_date)]<- "10"
+rota2$month[grep("^\\d{4}-11",rota2$collection_date)]<- "11"
+rota2$month[grep("^\\d{4}-12",rota2$collection_date)]<- "12"
+
+#no month found in $note (except when given as a range) or $organism
+
+#table(rota2$month)
+
+# date
+# check for 2 formats
+# table(rota2$collection_date[grep("^\\d{4}-\\d{2}-",rota2$collection_date)])
+# table(rota2$collection_date[grep("^\\d{2}-",rota2$collection_date)]) 
+
+# test
+# table(rota2$collection_date[grep(paste("^",date2,"-",sep=""),rota2$collection_date)])
+# table(rota2$collection_date[grep(paste("^\\d{4}-\\d{2}-",date2,sep=""),rota2$collection_date)])
+
+rota2$date <- "00"
+date1 <- 1
+while (date1 < 32)
+{
+date2 <- formatC(date1,width=2, flag="0")
+rota2$date[grep(paste("^",date2,"-",sep=""),rota2$collection_date)]<- paste(date2)
+rota2$date[grep(paste("^\\d{4}-\\d{2}-",date2,sep=""),rota2$collection_date)]<- paste(date2)
+date1 = date1 + 1
+}
+#table(rota2$date)
+
+# combining year, month, date to yyyy-mm-dd format (http://www.statmethods.net/input/dates.html)
+#mydates<-as.Date(rota2$collection_date2,"%Y-%m-%d")
+rota2$collection_date2<-paste(rota2$year,"-",rota2$month,"-",rota2$date,sep="") 
+table(rota2$collection_date2)
 
 # Summary Table ####
 table(rota2$host2)
 table(rota2$country2)
-
+table(rota2$collection_date2)
 # Sequence data ####
 
 # rota.seq <- read.dna("rota_sequences.fas",format="fasta",as.matrix=FALSE)
