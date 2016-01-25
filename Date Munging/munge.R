@@ -571,12 +571,14 @@ rota2$country2[grep("imbab",rota2$country)] <- "Zimbabwe"
 # year
 rota2$year <- "0000"
 y <- 1958
-while (y < 2016)
+while (y < 2017)
 {
-  rota2$year[grep(y,rota2$collection_date)] <- paste(y)
+  
   rota2$year[grep(y,rota2$organism)] <- paste(y)
   rota2$year[grep(y,rota2$note)] <- paste(y) # if a range is given, it will take the END year
   rota2$year[grep(y,rota2$host)] <- paste(y)
+  rota2$year[grep(y,rota2$collection_date)] <- paste(y)
+  
   y=y+1
 }
 #table(rota2$year)
