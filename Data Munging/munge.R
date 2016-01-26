@@ -665,33 +665,31 @@ date1 = date1 + 1
 rota2$collection_date2<-paste(rota2$year,"-",rota2$month,"-",rota2$date,sep="") 
 
 # SEGMENT ####
-
 # copying existing valid fields
 seg = 1
 while (seg < 12)
 {
   rota2$segment2[grep(paste("^",seg,"$",sep=""),rota2$segment)]<- paste(seg)
-  seg = seg + 1
-}
-
-# copying fields with RNA prefix
-seg = 1
-while (seg < 12)
-{
   rota2$segment2[grep(paste("RNA"," ",seg,"$",sep=""),rota2$segment)]<- paste(seg)
   rota2$segment2[grep(paste("RNA",seg,"$",sep=""),rota2$segment)]<- paste(seg)
-  seg = seg + 1
-}
-
-# copying fields with VP prefix
-seg = 1
-while (seg < 12)
-{
   rota2$segment2[grep(paste("VP",seg,"$",sep=""),rota2$segment)]<- paste(seg)
   seg = seg + 1
 }
-
 # excluded rearranged seg 11 and R suffixes; 26136 sequences with no segment data
+
+# looking from $chromosome, $map, $isolate
+# chr=1
+# while (chr < 12)
+# {
+#   rota2$segment2[grep(paste("egment",chr," ",sep=""),rota2$chromosome)]<- paste(seg)
+#   rota2$segment2[grep(paste("egment",chr,"$",sep=""),rota2$chromosome)]<- paste(seg)
+#   rota2$segment2[grep(paste("egment",chr," ",sep=""),rota2$map)]<- paste(seg)
+#   rota2$segment2[grep(paste("egment",chr,"$",sep=""),rota2$map)]<- paste(seg)
+#   rota2$segment2[grep(paste("egment",chr," ",sep=""),rota2$isolate)]<- paste(seg)
+#   rota2$segment2[grep(paste("egment",chr,"$",sep=""),rota2$isolate)]<- paste(seg)
+#   
+#   chr = chr + 1
+# } #no new additions
 
 # STRAIN ####
 # serotypes come in either P, G or a mixture of both (http://onlinelibrary.wiley.com/doi/10.1002/rmv.448/epdf)
@@ -703,7 +701,7 @@ while (seg < 12)
 
 # SPECIES ####
 # A to H
-# data in $organism, $note
+# data in $organism, $note, $serogroup
 
 sp = 1
 while (sp < 9)
@@ -712,11 +710,13 @@ rota2$organism2[grep(paste("virus"," ",LETTERS[sp]," ", sep=""),rota2$organism)]
 rota2$organism2[grep(paste("virus"," ",LETTERS[sp],"$", sep=""),rota2$organism)] <- paste(LETTERS[sp])
 rota2$organism2[grep(paste("virus"," ",LETTERS[sp]," ", sep=""),rota2$note)] <- paste(LETTERS[sp])
 rota2$organism2[grep(paste("virus"," ",LETTERS[sp],"$", sep=""),rota2$note)] <- paste(LETTERS[sp])
+rota2$organism2[grep(paste("virus"," ",LETTERS[sp]," ", sep=""),rota2$serogroup)] <- paste(LETTERS[sp])
+rota2$organism2[grep(paste("virus"," ",LETTERS[sp],"$", sep=""),rota2$serogroup)] <- paste(LETTERS[sp])
+
 sp = sp + 1
 }
 
-
-# Summary Table ####
+# SUMMARY TABLES ####
 table(rota2$host2)
 table(rota2$country2)
 table(rota2$collection_date2)
