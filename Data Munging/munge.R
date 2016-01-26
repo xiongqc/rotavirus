@@ -16,13 +16,19 @@ rota.nohost <- rota[is.na(rota$host),]
 
 # Country Null
 rota.nocountry <- rota[is.na(rota$country),]
-# table(rota.nocountry$note)
-# table(rota.nocountry$organism)
 
 # Date Null
 rota.nodate <- rota[is.na(rota$collection_date),]
-# table(rota.nocountry$note)
-# table(rota.nocountry$organism)
+
+# Segment Null
+rota.nosegment <- rota[is.na(rota$segment),]
+
+# Strain Null
+rota.nostrain <- rota[is.na(rota$strain),]
+
+# Organism Null (data without species)
+rota.noorganism <- rota[is.na(rota$organism),]
+
 
 # New Table and Columns
 
@@ -30,23 +36,32 @@ rota.nodate <- rota[is.na(rota$collection_date),]
 rota2 <- rota
 #summary(rota2)
 
-# Assign Host2 Column
+# Assign host2 Column
 rota2$host2 <- ""
 
-# Assign Country2 Column
+# Assign country2 Column
 rota2$country2 <- ""
 
-# Assign Collection_date2 Column
+# Assign collection_date2 Column
 rota2$collection_date2 <- ""
+
+# Assign segment2 column
+rota2$segment2 <- ""
+
+# Assign strain2 column
+rota2$strain2 <- ""
+
+# Assign organism2 column
+rota2$organism2 <- ""
 
 # HOSTS####
 
 # table(rota2$host)
 
 # Use the below for testing
-table(rota2$host[grep("omo sapiens",rota2$host)])
-table(rota2$organism[grep("ig",rota2$organism)])
-table(rota2$note[grep("ig",rota2$note)])
+#table(rota2$host[grep("omo sapiens",rota2$host)])
+#table(rota2$organism[grep("ig",rota2$organism)])
+#table(rota2$note[grep("ig",rota2$note)])
 
 # Higher order classifications // place in front so that the fields can be overwritten later
 # Avian
@@ -646,14 +661,67 @@ date1 = date1 + 1
 #table(rota2$date)
 
 # combining year, month, date to yyyy-mm-dd format (http://www.statmethods.net/input/dates.html)
-#mydates<-as.Date(rota2$collection_date2,"%Y-%m-%d")
+#EXAMPLE: mydates<-as.Date(rota2$collection_date2,"%Y-%m-%d")
 rota2$collection_date2<-paste(rota2$year,"-",rota2$month,"-",rota2$date,sep="") 
-table(rota2$collection_date2)
+
+# SEGMENT ####
+
+# copying existing valid fields
+seg = 1
+while (seg < 12)
+{
+  rota2$segment2[grep(paste("^",seg,"$",sep=""),rota2$segment)]<- paste(seg)
+  seg = seg + 1
+}
+
+# copying fields with RNA prefix
+seg = 1
+while (seg < 12)
+{
+  rota2$segment2[grep(paste("RNA"," ",seg,"$",sep=""),rota2$segment)]<- paste(seg)
+  rota2$segment2[grep(paste("RNA",seg,"$",sep=""),rota2$segment)]<- paste(seg)
+  seg = seg + 1
+}
+
+# copying fields with VP prefix
+seg = 1
+while (seg < 12)
+{
+  rota2$segment2[grep(paste("VP",seg,"$",sep=""),rota2$segment)]<- paste(seg)
+  seg = seg + 1
+}
+
+# excluded rearranged seg 11 and R suffixes; 26136 sequences with no segment data
+
+# STRAIN ####
+# serotypes come in either P, G or a mixture of both (http://onlinelibrary.wiley.com/doi/10.1002/rmv.448/epdf)
+# VP7 determines the G-type strain of the virus (glycoprotein); VP4 serotype is designated as P (protease)
+# G and P antigens segregate independently
+# 14 (or 15) rotavirus G serotypes and 11 (or 14) rotavirus P serotypes (2011; http://www.jhpn.net/index.php/jhpn/article/viewFile/33/22)
+# data in $serotype, $organism, $strain
+# to check: P1: serotype; P[1]: genotype?? genotypes for P = 23, serotypes for P = 14
+
+# SPECIES ####
+# A to H
+# data in $organism, $note
+
+sp = 1
+while (sp < 9)
+{
+rota2$organism2[grep(paste("virus"," ",LETTERS[sp]," ", sep=""),rota2$organism)] <- paste(LETTERS[sp])
+rota2$organism2[grep(paste("virus"," ",LETTERS[sp],"$", sep=""),rota2$organism)] <- paste(LETTERS[sp])
+rota2$organism2[grep(paste("virus"," ",LETTERS[sp]," ", sep=""),rota2$note)] <- paste(LETTERS[sp])
+rota2$organism2[grep(paste("virus"," ",LETTERS[sp],"$", sep=""),rota2$note)] <- paste(LETTERS[sp])
+sp = sp + 1
+}
+
 
 # Summary Table ####
 table(rota2$host2)
 table(rota2$country2)
 table(rota2$collection_date2)
+table(rota2$segment2)
+table(rota2$organism2)
 # Sequence data ####
 
 # rota.seq <- read.dna("rota_sequences.fas",format="fasta",as.matrix=FALSE)
