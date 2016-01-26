@@ -6,7 +6,6 @@ library(ape)
 
 # Load annotations
 rota <- read.table("rota_annotations.txt",header=T,row.names=NULL,sep="\t",stringsAsFactors=FALSE)
-
 # SETUP ####
 
 # Host Null
@@ -53,7 +52,6 @@ rota2$strain2 <- ""
 
 # Assign organism2 column
 rota2$organism2 <- ""
-
 # HOSTS####
 
 # table(rota2$host)
@@ -257,7 +255,6 @@ rota2$host2[grep("urkey",rota2$organism)] <- "Turkey"
 
 # Vicuna
 rota2$host2[grep("vicugna",rota2$host)] <- "Vicuna"
-
 # COUNTRY####
 
 # Summary
@@ -579,7 +576,6 @@ rota2$country2[grep("Zambia",rota2$country)] <- "Zambia"
 
 # Zimbabwe
 rota2$country2[grep("imbab",rota2$country)] <- "Zimbabwe"
-
 # DATE ####
 
 # for testing
@@ -663,7 +659,6 @@ date1 = date1 + 1
 # combining year, month, date to yyyy-mm-dd format (http://www.statmethods.net/input/dates.html)
 #EXAMPLE: mydates<-as.Date(rota2$collection_date2,"%Y-%m-%d")
 rota2$collection_date2<-paste(rota2$year,"-",rota2$month,"-",rota2$date,sep="") 
-
 # SEGMENT ####
 # copying existing valid fields
 seg = 1
@@ -678,19 +673,39 @@ while (seg < 12)
 # excluded rearranged seg 11 and R suffixes; 26136 sequences with no segment data
 
 # looking from $chromosome, $map, $isolate
-# chr=1
-# while (chr < 12)
-# {
-#   rota2$segment2[grep(paste("egment",chr," ",sep=""),rota2$chromosome)]<- paste(seg)
-#   rota2$segment2[grep(paste("egment",chr,"$",sep=""),rota2$chromosome)]<- paste(seg)
-#   rota2$segment2[grep(paste("egment",chr," ",sep=""),rota2$map)]<- paste(seg)
-#   rota2$segment2[grep(paste("egment",chr,"$",sep=""),rota2$map)]<- paste(seg)
-#   rota2$segment2[grep(paste("egment",chr," ",sep=""),rota2$isolate)]<- paste(seg)
-#   rota2$segment2[grep(paste("egment",chr,"$",sep=""),rota2$isolate)]<- paste(seg)
-#   
-#   chr = chr + 1
-# } #no new additions
+chr=1
+while (chr < 12)
+{
+  #rota2$segment2[grep(paste("egment"," ",chr," ",sep=""),rota2$chromosome)]<- paste(chr)
+  rota2$segment2[grep(paste("egment"," ",chr,"$",sep=""),rota2$chromosome)]<- paste(chr)
+  #rota2$segment2[grep(paste("VP"," ",chr," ",sep=""),rota2$chromosome)]<- paste(chr) # no new additions
+  #rota2$segment2[grep(paste("VP"," ",chr,"$",sep=""),rota2$chromosome)]<- paste(chr)
+  #rota2$segment2[grep(paste("VP",chr," ",sep=""),rota2$chromosome)]<- paste(chr)
+  #rota2$segment2[grep(paste("VP",chr,"$",sep=""),rota2$chromosome)]<- paste(chr)
+  
+  #rota2$segment2[grep(paste("egment"," ",chr," ",sep=""),rota2$map)]<- paste(chr)
+  rota2$segment2[grep(paste("egment"," ", chr,"$",sep=""),rota2$map)]<- paste(chr)
+  #rota2$segment2[grep(paste("VP"," ",chr," ",sep=""),rota2$map)]<- paste(chr)
+  #rota2$segment2[grep(paste("VP"," ",chr,"$",sep=""),rota2$map)]<- paste(chr)
+  #rota2$segment2[grep(paste("VP",chr," ",sep=""),rota2$map)]<- paste(chr)
+  rota2$segment2[grep(paste("VP",chr,"$",sep=""),rota2$map)]<- paste(chr)
+  
+  #rota2$segment2[grep(paste("egment"," ", chr," ",sep=""),rota2$isolate)]<- paste(chr)
+  rota2$segment2[grep(paste("egment"," ", chr,"$",sep=""),rota2$isolate)]<- paste(chr)
+  #rota2$segment2[grep(paste("VP"," ",chr," ",sep=""),rota2$isolate)]<- paste(chr)
+  #rota2$segment2[grep(paste("VP"," ",chr,"$",sep=""),rota2$isolate)]<- paste(chr)
+  #rota2$segment2[grep(paste("VP",chr," ",sep=""),rota2$isolate)]<- paste(chr)
+  rota2$segment2[grep(paste("VP",chr,"$",sep=""),rota2$isolate)]<- paste(chr)
+  rota2$segment2[grep(paste("\\(\\VP",chr,sep=""),rota2$isolate)]<- paste(chr)
+  
+  #rota2$segment2[grep(paste("VP"," ",chr," ",sep=""),rota2$note)]<- paste(chr) # not good criteria, same with "egment"
+  #rota2$segment2[grep(paste("VP"," ",chr,"$",sep=""),rota2$note)]<- paste(chr)
+  #rota2$segment2[grep(paste("VP",chr," ",sep=""),rota2$note)]<- paste(chr)
+  #rota2$segment2[grep(paste("VP",chr,"$",sep=""),rota2$note)]<- paste(chr)
 
+  chr = chr + 1
+}
+table(rota2$segment2)
 # STRAIN ####
 # serotypes come in either P, G or a mixture of both (http://onlinelibrary.wiley.com/doi/10.1002/rmv.448/epdf)
 # VP7 determines the G-type strain of the virus (glycoprotein); VP4 serotype is designated as P (protease)
@@ -698,6 +713,32 @@ while (seg < 12)
 # 14 (or 15) rotavirus G serotypes and 11 (or 14) rotavirus P serotypes (2011; http://www.jhpn.net/index.php/jhpn/article/viewFile/33/22)
 # data in $serotype, $organism, $strain
 # to check: P1: serotype; P[1]: genotype?? genotypes for P = 23, serotypes for P = 14
+
+# G only
+str = 1
+while (str < 16)
+{
+  rota2$strain2[grep(paste("G",str,"$",sep=""),rota2$strain)]<- paste("G",str,sep="")
+  rota2$strain2[grep(paste("G",str,"_",sep=""),rota2$strain)]<- paste("G",str,sep="")
+  rota2$strain2[grep(paste("^G",str,"$",sep=""),rota2$serotype)]<- paste("G",str,sep="")
+  
+  str = str + 1
+}
+
+# # G and P combinations
+# gvar=1
+# pvar=1
+# #while (g < 16)
+# #{
+#  # while (p < 15)
+#   #{
+#   rota2$strain2[grep(paste("G",gvar,"P",pvar,sep=""),rota2$strain)]<- paste("G",gvar,"P,pvar,sep="")
+#   rota2$strain2[grep(paste("G",gvar,"P","[",pvar,sep=""),rota2$strain, fixed=TRUE)]<- paste("G",gvar,"P,pvar,sep="")
+#   #}
+#   #g = g + 1
+# #}
+#double digits (eg11) will overwrite single digits later
+table(rota2$strain2)
 
 # SPECIES ####
 # A to H
@@ -715,12 +756,12 @@ rota2$organism2[grep(paste("virus"," ",LETTERS[sp],"$", sep=""),rota2$serogroup)
 
 sp = sp + 1
 }
-
 # SUMMARY TABLES ####
 table(rota2$host2)
 table(rota2$country2)
 table(rota2$collection_date2)
 table(rota2$segment2)
+table(rota2$strain2)
 table(rota2$organism2)
 # Sequence data ####
 
