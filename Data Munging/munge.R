@@ -52,8 +52,10 @@ table(rota2$note[grep("ig",rota2$note)])
 # Avian
 rota2$host2[grep("vian",rota2$host)] <- "Avian"
 rota2$host2[grep("vian",rota2$organism)] <- "Avian"
+rota2$host2[grep("vian",rota2$strain)] <- "Avian"
 # Murine
 rota2$host2[grep("urine",rota2$organism)] <- "Murine"
+rota2$host2[grep("urine",rota2$strain)] <- "Murine"
 
 # Alpaca
 rota2$host2[grep("lpaca",rota2$host)] <- "Alpaca"
@@ -64,6 +66,7 @@ rota2$host2[grep("ntelope",rota2$host)] <- "Antelope"
 
 # Bat
 rota2$host2[grep("bat",rota2$host)] <- "Bat"
+rota2$host2[grep("bat",ignore.case=TRUE, rota2$strain)] <- "Bat"
 rota2$host2[grep("ipposideros",rota2$host)] <- "Bat"
 rota2$host2[grep("hinolophus",rota2$host)] <- "Bat"
 rota2$host2[grep("arollia",rota2$host)] <- "Bat"
@@ -92,6 +95,7 @@ rota2$host2[grep("ovine",rota2$host)] <- "Cow"
 rota2$host2[grep("alf",rota2$host)] <- "Cow"
 rota2$host2[grep("attle",rota2$host)] <- "Cow"
 rota2$host2[grep("ow",rota2$host)] <- "Cow"
+rota2$host2[grep("ow",rota2$strain)] <- "Cow"
 rota2$host2[grep("Bos",rota2$host)] <- "Cow"
 rota2$host2[grep("ovine",rota2$organism)] <- "Cow" 
 rota2$host2[grep("raffe",rota2$organism)] <- "Giraffe" #giraffe under bovine
@@ -146,6 +150,7 @@ rota2$host2[grep("uman ro",rota2$note)] <- "Human"
 rota2$host2[grep("hild",rota2$note)] <- "Human"
 rota2$host2[grep("atient",rota2$note)] <- "Human"
 rota2$host2[grep("nfant",rota2$note)] <- "Human"
+rota2$host2[grep("uman",rota2$strain)] <- "Human"
 
 # Monkey
 rota2$host2[grep("onkey",rota2$host)] <- "Monkey"
@@ -174,6 +179,7 @@ rota2$host2[grep("heasant",rota2$host)] <- "Pheasant"
 
 # Pig
 rota2$host2[grep("ig$",rota2$host)] <- "Pig"
+rota2$host2[grep("ig-",rota2$strain)] <- "Pig"
 rota2$host2[grep("iglet",rota2$host)] <- "Pig"
 rota2$host2[grep("crofa",rota2$host)] <- "Pig"
 rota2$host2[grep("orcine",rota2$host)] <- "Pig"
@@ -189,6 +195,7 @@ rota2$host2[grep("geon",rota2$organism)] <- "Pigeon"
 
 # Rabbit
 rota2$host2[grep("abbit",rota2$host)] <- "Rabbit"
+rota2$host2[grep("abbit",rota2$strain)] <- "Rabbit"
 rota2$host2[grep("apine",rota2$host)] <- "Rabbit"
 rota2$host2[grep("ryctolagus",rota2$host)] <- "Rabbit"
 rota2$host2[grep("abbit",rota2$organism)] <- "Rabbit"
@@ -220,6 +227,7 @@ rota2$host2[grep("amb",rota2$organism)] <- "Sheep"
 # Simian
 rota2$host2[grep("imian",rota2$host)] <- "Simian"
 rota2$host2[grep("imian",rota2$organism)] <- "Simian"
+rota2$host2[grep("imian",rota2$strain)] <- "Simian"
 
 # Shellfish
 rota2$host2[grep("hellfish",rota2$host)] <- "Shellfish"
@@ -366,6 +374,7 @@ rota2$country2[grep("ungary",rota2$country)] <- "Hungary"
 
 # India
 rota2$country2[grep("ndia",rota2$country)] <- "India"
+rota2$country2[grep("ndia",rota2$strain)] <- "India"
 
 # Indonesia
 rota2$country2[grep("ndonesia",rota2$country)] <- "Indonesia"
@@ -536,6 +545,7 @@ rota2$country2[grep("ruguay",rota2$country)] <- "Uruguay"
 # USA
 rota2$country2[grep("USA",rota2$country)] <- "USA"
 rota2$country2[grep("USA",rota2$organism)] <- "USA"
+rota2$country2[grep("USA",rota2$strain)] <- "USA"
 rota2$country2[grep("bama",rota2$organism)] <- "USA"
 rota2$country2[grep("SEP-",rota2$organism)] <- "USA"
 rota2$country2[grep("U.S.",rota2$note)] <- "USA"
