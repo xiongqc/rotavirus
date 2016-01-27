@@ -590,7 +590,7 @@ rota2$country2[grep("imbab",rota2$country)] <- "Zimbabwe"
 
 # grabbing for year, month, date separately
 # year
-rota2$year <- "0000"
+rota2$year <- "XXXX"
 y <- 1958
 while (y < 2017)
 {
@@ -605,7 +605,7 @@ while (y < 2017)
 #table(rota2$year)
 
 # month
-rota2$month <- "00"
+rota2$month <- "XX"
 rota2$month[grep("Jan",ignore.case = TRUE,rota2$collection_date)]<- "01"
 rota2$month[grep("Feb",ignore.case = TRUE,rota2$collection_date)]<- "02"
 rota2$month[grep("Mar",ignore.case = TRUE,rota2$collection_date)]<- "03"
@@ -645,7 +645,7 @@ rota2$month[grep("^\\d{4}-12",rota2$collection_date)]<- "12"
 # table(rota2$collection_date[grep(paste("^",date2,"-",sep=""),rota2$collection_date)])
 # table(rota2$collection_date[grep(paste("^\\d{4}-\\d{2}-",date2,sep=""),rota2$collection_date)])
 
-rota2$date <- "00"
+rota2$date <- "XX"
 date1 <- 1
 while (date1 < 32)
 {
@@ -706,40 +706,6 @@ while (chr < 12)
   chr = chr + 1
 }
 table(rota2$segment2)
-# STRAIN ####
-# serotypes come in either P, G or a mixture of both (http://onlinelibrary.wiley.com/doi/10.1002/rmv.448/epdf)
-# VP7 determines the G-type strain of the virus (glycoprotein); VP4 serotype is designated as P (protease)
-# G and P antigens segregate independently
-# 14 (or 15) rotavirus G serotypes and 11 (or 14) rotavirus P serotypes (2011; http://www.jhpn.net/index.php/jhpn/article/viewFile/33/22)
-# data in $serotype, $organism, $strain
-# to check: P1: serotype; P[1]: genotype?? genotypes for P = 23, serotypes for P = 14
-
-# G only
-str = 1
-while (str < 16)
-{
-  rota2$strain2[grep(paste("G",str,"$",sep=""),rota2$strain)]<- paste("G",str,sep="")
-  rota2$strain2[grep(paste("G",str,"_",sep=""),rota2$strain)]<- paste("G",str,sep="")
-  rota2$strain2[grep(paste("^G",str,"$",sep=""),rota2$serotype)]<- paste("G",str,sep="")
-  
-  str = str + 1
-}
-
-# # G and P combinations
-# gvar=1
-# pvar=1
-# #while (g < 16)
-# #{
-#  # while (p < 15)
-#   #{
-#   rota2$strain2[grep(paste("G",gvar,"P",pvar,sep=""),rota2$strain)]<- paste("G",gvar,"P,pvar,sep="")
-#   rota2$strain2[grep(paste("G",gvar,"P","[",pvar,sep=""),rota2$strain, fixed=TRUE)]<- paste("G",gvar,"P,pvar,sep="")
-#   #}
-#   #g = g + 1
-# #}
-#double digits (eg11) will overwrite single digits later
-table(rota2$strain2)
-
 # SPECIES ####
 # A to H
 # data in $organism, $note, $serogroup
@@ -756,6 +722,97 @@ rota2$organism2[grep(paste("virus"," ",LETTERS[sp],"$", sep=""),rota2$serogroup)
 
 sp = sp + 1
 }
+# STRAIN ####
+# serotypes come in either P, G or a mixture of both (http://onlinelibrary.wiley.com/doi/10.1002/rmv.448/epdf)
+# VP7 determines the G-type strain of the virus (glycoprotein); VP4 serotype is designated as P (protease)
+# G and P antigens segregate independently
+# 14 (or 15) rotavirus G serotypes and 11 (or 14) rotavirus P serotypes (2011; http://www.jhpn.net/index.php/jhpn/article/viewFile/33/22)
+# data in $serotype, $organism, $strain
+# to check: P1: serotype; P[1]: genotype?? genotypes for P = 23, serotypes for P = 14; way more in data
+
+rota2$strain2 <- ""
+
+# G only
+str = 1
+while (str < 16)
+{
+  rota2$strain2[grep(paste("G",str,"$",sep=""),rota2$strain)]<- paste("G",str,"P[X]",sep="")
+  rota2$strain2[grep(paste("G",str,"_",sep=""),rota2$strain)]<- paste("G",str,"P[X]",sep="")
+  rota2$strain2[grep(paste("^G",str,"$",sep=""),rota2$serotype)]<- paste("G",str,"P[X]",sep="")
+  
+  str = str + 1
+}
+
+# GXP[X]
+rota2$strain2[grep(paste("GXP[X]"),rota2$strain, fixed = TRUE)] <- paste("GXP[X]")
+rota2$strain2[grep(paste("P[X]GX"),rota2$strain, fixed = TRUE)] <- paste("GXP[X]")
+rota2$strain2[grep(paste("GXP[X]"),rota2$serotype, fixed = TRUE)] <- paste("GXP[X]")
+rota2$strain2[grep(paste("P[X]GX"),rota2$serotype, fixed = TRUE)] <- paste("GXP[X]")
+rota2$strain2[grep(paste("GXP[X]"),rota2$serogroup, fixed = TRUE)] <- paste("GXP[X]")
+rota2$strain2[grep(paste("P[X]GX"),rota2$serogroup, fixed = TRUE)] <- paste("GXP[X]")
+
+# G and P combinations
+g=1
+p=1
+while (g < 16)
+{
+  while (p < 30)
+  {
+    rota2$strain2[grep(paste("G",g,"P",p,sep=""),rota2$strain)] <- paste("G",g,"P[",p,"]",sep="")
+    rota2$strain2[grep(paste("G",g,"P","[",p,sep=""),rota2$strain, fixed = TRUE)] <- paste("G",g,"P[",p,"]",sep="")
+    rota2$strain2[grep(paste("P",p,"G",g,sep=""),rota2$strain)] <- paste("G",g,"P[",p,"]",sep="")
+    rota2$strain2[grep(paste("P","[",p,"]","G",g,sep=""),rota2$strain, fixed = TRUE)] <- paste("G",g,"P[",p,"]",sep="")
+    
+    rota2$strain2[grep(paste("G","X","P",p,sep=""),rota2$strain)] <- paste("G","X","P[",p,"]",sep="")
+    rota2$strain2[grep(paste("G","X","P","[",p,sep=""),rota2$strain, fixed = TRUE)] <- paste("G","X","P[",p,"]",sep="")
+    rota2$strain2[grep(paste("P",p,"G","X",sep=""),rota2$strain)] <- paste("G","X","P[",p,"]",sep="")
+    rota2$strain2[grep(paste("P","[",p,"]","G","X",sep=""),rota2$strain, fixed = TRUE)] <- paste("G","X","P[",p,"]",sep="")
+    
+    rota2$strain2[grep(paste("G",g,"P",p,sep=""),rota2$serotype)] <- paste("G",g,"P[",p,"]",sep="")
+    rota2$strain2[grep(paste("G",g,"P","[",p,sep=""),rota2$serotype, fixed = TRUE)] <- paste("G",g,"P[",p,"]",sep="")
+    rota2$strain2[grep(paste("P",p,"G",g,sep=""),rota2$serotype)] <- paste("G",g,"P[",p,"]",sep="")
+    rota2$strain2[grep(paste("P","[",p,"]","G",g,sep=""),rota2$serotype, fixed = TRUE)] <- paste("G",g,"P[",p,"]",sep="")
+    
+    rota2$strain2[grep(paste("G","X","P",p,sep=""),rota2$serotype)] <- paste("G","X","P[",p,"]",sep="")
+    rota2$strain2[grep(paste("G","X","P","[",p,sep=""),rota2$serotype, fixed = TRUE)] <- paste("G","X","P[",p,"]",sep="")
+    rota2$strain2[grep(paste("P",p,"G","X",sep=""),rota2$serotype)] <- paste("G","X","P[",p,"]",sep="")
+    rota2$strain2[grep(paste("P","[",p,"]","G","X",sep=""),rota2$serotype, fixed = TRUE)] <- paste("G","X","P[",p,"]",sep="")
+    
+    rota2$strain2[grep(paste("G",g,"P",p,sep=""),rota2$serogroup)] <- paste("G",g,"P[",p,"]",sep="")
+    rota2$strain2[grep(paste("G",g,"P","[",p,sep=""),rota2$serogroup, fixed = TRUE)] <- paste("G",g,"P[",p,"]",sep="")
+    rota2$strain2[grep(paste("P",p,"G",g,sep=""),rota2$serogroup)] <- paste("G",g,"P[",p,"]",sep="")
+    rota2$strain2[grep(paste("P","[",p,"]","G",g,sep=""),rota2$serogroup, fixed = TRUE)] <- paste("G",g,"P[",p,"]",sep="")
+    
+    rota2$strain2[grep(paste("G","X","P",p,sep=""),rota2$serogroup)] <- paste("G","X","P[",p,"]",sep="")
+    rota2$strain2[grep(paste("G","X","P","[",p,sep=""),rota2$serogroup, fixed = TRUE)] <- paste("G","X","P[",p,"]",sep="")
+    rota2$strain2[grep(paste("P",p,"G","X",sep=""),rota2$serogroup)] <- paste("G","X","P[",p,"]",sep="")
+    rota2$strain2[grep(paste("P","[",p,"]","G","X",sep=""),rota2$serogroup, fixed = TRUE)] <- paste("G","X","P[",p,"]",sep="")
+    
+    p = p + 1
+  }
+  rota2$strain2[grep(paste("G",g,"P","X",sep=""),rota2$strain)] <- paste("G",g,"P[X]",sep="")
+  rota2$strain2[grep(paste("G",g,"P","[","X",sep=""),rota2$strain, fixed = TRUE)] <- paste("G",g,"P[X]",sep="")
+  rota2$strain2[grep(paste("P","X","G",g,sep=""),rota2$strain)] <- paste("G",g,"P[X]",sep="")
+  rota2$strain2[grep(paste("P","[","X","]","G",g,sep=""),rota2$strain, fixed = TRUE)] <- paste("G",g,"P[X]",sep="")
+  
+  rota2$strain2[grep(paste("G",g,"P","X",sep=""),rota2$serotype)] <- paste("G",g,"P[X]",sep="")
+  rota2$strain2[grep(paste("G",g,"P","[","X",sep=""),rota2$serotype, fixed = TRUE)] <- paste("G",g,"P[X]",sep="")
+  rota2$strain2[grep(paste("P","X","G",g,sep=""),rota2$serotype)] <- paste("G",g,"P[X]",sep="")
+  rota2$strain2[grep(paste("P","[","X","]","G",g,sep=""),rota2$serotype, fixed = TRUE)] <- paste("G",g,"P[X]",sep="")
+  
+  rota2$strain2[grep(paste("G",g,"P","X",sep=""),rota2$serogroup)] <- paste("G",g,"P[X]",sep="")
+  rota2$strain2[grep(paste("G",g,"P","[","X",sep=""),rota2$serogroup, fixed = TRUE)] <- paste("G",g,"P[X]",sep="")
+  rota2$strain2[grep(paste("P","X","G",g,sep=""),rota2$serogroup)] <- paste("G",g,"P[X]",sep="")
+  rota2$strain2[grep(paste("P","[","X","]","G",g,sep=""),rota2$serogroup, fixed = TRUE)] <- paste("G",g,"P[X]",sep="")
+  
+  p = 1 #reinitialize
+  g = g + 1
+  print (paste("nested loop:", g/16*100,"percent complete"))
+}
+#double digits (egG1P[11]) will overwrite single digits (G1P[1]) later
+
+# identify mixed strains
+rota2$strain2[grep("ix",rota2$strain)] <- paste("Mixed Genotype",sep="")
 # SUMMARY TABLES ####
 table(rota2$host2)
 table(rota2$country2)
