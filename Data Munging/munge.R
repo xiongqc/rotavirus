@@ -6,6 +6,7 @@ library(ape)
 
 # Load annotations
 rota <- read.table("rota_annotations.txt",header=T,row.names=NULL,sep="\t",stringsAsFactors=FALSE)
+
 # SETUP ####
 
 # Host Null
@@ -36,22 +37,23 @@ rota2 <- rota
 #summary(rota2)
 
 # Assign host2 Column
-rota2$host2 <- ""
+rota2$host2 <- "NULL"
 
 # Assign country2 Column
-rota2$country2 <- ""
+rota2$country2 <- "NULL"
 
 # Assign collection_date2 Column
-rota2$collection_date2 <- ""
+rota2$collection_date2 <- "NULL"
 
 # Assign segment2 column
-rota2$segment2 <- ""
+rota2$segment2 <- "NULL"
 
 # Assign strain2 column
-rota2$strain2 <- ""
+rota2$strain2 <- "NULL"
 
 # Assign organism2 column
-rota2$organism2 <- ""
+rota2$organism2 <- "NULL"
+
 # HOSTS####
 
 # table(rota2$host)
@@ -255,6 +257,7 @@ rota2$host2[grep("urkey",rota2$organism)] <- "Turkey"
 
 # Vicuna
 rota2$host2[grep("vicugna",rota2$host)] <- "Vicuna"
+
 # COUNTRY####
 
 # Summary
@@ -576,7 +579,8 @@ rota2$country2[grep("Zambia",rota2$country)] <- "Zambia"
 
 # Zimbabwe
 rota2$country2[grep("imbab",rota2$country)] <- "Zimbabwe"
-# DATE ####
+
+# COLLECTION DATE ####
 
 # for testing
 # table(rota2$collection_date[grep("^\\d{4}$",rota2$collection_date)],exclude=NULL)
@@ -654,11 +658,15 @@ rota2$date[grep(paste("^",date2,"-",sep=""),rota2$collection_date)]<- paste(date
 rota2$date[grep(paste("^\\d{4}-\\d{2}-",date2,sep=""),rota2$collection_date)]<- paste(date2)
 date1 = date1 + 1
 }
+
 #table(rota2$date)
 
 # combining year, month, date to yyyy-mm-dd format (http://www.statmethods.net/input/dates.html)
 #EXAMPLE: mydates<-as.Date(rota2$collection_date2,"%Y-%m-%d")
-rota2$collection_date2<-paste(rota2$year,"-",rota2$month,"-",rota2$date,sep="") 
+rota2$collection_date2<-paste(rota2$year,"-",rota2$month,"-",rota2$date,sep="")
+
+rota2$collection_date2[grep("XXXX-XX-XX",rota2$collection_date2)]<- "NULL"
+
 # SEGMENT ####
 # copying existing valid fields
 seg = 1
@@ -706,6 +714,7 @@ while (chr < 12)
   chr = chr + 1
 }
 table(rota2$segment2)
+
 # SPECIES ####
 # A to H
 # data in $organism, $note, $serogroup
@@ -722,6 +731,7 @@ rota2$organism2[grep(paste("virus"," ",LETTERS[sp],"$", sep=""),rota2$serogroup)
 
 sp = sp + 1
 }
+
 # STRAIN ####
 # serotypes come in either P, G or a mixture of both (http://onlinelibrary.wiley.com/doi/10.1002/rmv.448/epdf)
 # VP7 determines the G-type strain of the virus (glycoprotein); VP4 serotype is designated as P (protease)
@@ -811,6 +821,7 @@ while (g < 16)
 
 # identify mixed strains
 rota2$strain2[grep("ix",rota2$strain)] <- paste("Mixed Genotype",sep="")
+
 # SUMMARY TABLES ####
 table(rota2$host2)
 table(rota2$country2)
@@ -818,7 +829,52 @@ table(rota2$collection_date2)
 table(rota2$segment2)
 table(rota2$strain2)
 table(rota2$organism2)
-# Sequence data ####
 
-# rota.seq <- read.dna("rota_sequences.fas",format="fasta",as.matrix=FALSE)
-#match(names(rota.seq),rota2$accession)
+# SEQUENCE DATA ####
+
+rota.seq <- read.dna("rota_sequences.fas",format="fasta",as.matrix=FALSE) #as.matrix = FALSE: always returns the sequences in a list.
+# rota.seq <- read.dna("rota_sequences.fas",format="fasta",as.matrix=NULL)
+match(names(rota.seq),rota2$accession)
+rota2$newlabel <- paste(rota2$accession,rota2$host2, rota2$country2, rota2$collection_date2, "Rotavirus", rota2$organism2, "Strain", rota2$strain2, "Segment", rota2$segment2, sep="_")
+
+i=1
+while (i<50000)
+{
+  names(rota.seq)[i] <- rota2$newlabel[i]
+  i = i + 1
+#  print (paste(i/50000*100, "%"))
+}
+# produces an error at the end due to difference in vector size but still works perfectly.
+
+# names(rota.seq)[grep(rota2$acession[i])] <- paste(rota2$newlabel[i])
+write.dna(rota.seq, "rota_annotated.fas", format = "fasta")
+
+# for future parallelizing (http://stackoverflow.com/questions/17196261/understanding-the-differences-between-mclapply-and-parlapply-in-r)
+# library(parallel)
+# numCores <- detectCores()
+# cl <- makeCluster(numCores) 
+# inputs <- 1:50000  
+# processInput <- function(i) {  
+#   names(rota.seq)[i] <- rota2$newlabel[i]
+# }
+# results = parLapply(cl, inputs, processInput)  
+# stopCluster(cl)  
+
+# parallelizing using foreach
+# library(foreach)  
+# library(doParallel)  
+# library(parallel)
+# 
+# numCores <- detectCores()  
+# cl <- makeCluster(numCores)  
+# registerDoParallel(cl)
+# 
+# inputs <- 1:50000  
+# processInput <- function(i) {  
+#   names(rota.seq)[i] <- rota2$newlabel[i]
+# }
+# 
+# results <- foreach(i=inputs) %dopar% {  
+#   processInput(i)
+# }
+
