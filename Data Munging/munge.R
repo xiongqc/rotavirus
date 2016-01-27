@@ -730,8 +730,6 @@ sp = sp + 1
 # data in $serotype, $organism, $strain
 # to check: P1: serotype; P[1]: genotype?? genotypes for P = 23, serotypes for P = 14; way more in data
 
-rota2$strain2 <- ""
-
 # G only
 str = 1
 while (str < 16)
