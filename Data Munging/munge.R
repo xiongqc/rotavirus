@@ -837,16 +837,8 @@ rota.seq <- read.dna("rota_sequences.fas",format="fasta",as.matrix=FALSE) #as.ma
 match(names(rota.seq),rota2$accession)
 rota2$newlabel <- paste(rota2$accession,rota2$host2, rota2$country2, rota2$collection_date2, "Rotavirus", rota2$organism2, "Strain", rota2$strain2, "Segment", rota2$segment2, sep="_")
 
-i=1
-while (i<50000)
-{
-  names(rota.seq)[i] <- rota2$newlabel[i]
-  i = i + 1
-#  print (paste(i/50000*100, "%"))
-}
-# produces an error at the end due to difference in vector size but still works perfectly.
+names(rota.seq)<- rota2$newlabel
 
-# names(rota.seq)[grep(rota2$acession[i])] <- paste(rota2$newlabel[i])
 write.dna(rota.seq, "rota_annotated.fas", format = "fasta")
 
 # for future parallelizing (http://stackoverflow.com/questions/17196261/understanding-the-differences-between-mclapply-and-parlapply-in-r)
@@ -855,7 +847,7 @@ write.dna(rota.seq, "rota_annotated.fas", format = "fasta")
 # cl <- makeCluster(numCores) 
 # inputs <- 1:50000  
 # processInput <- function(i) {  
-#   names(rota.seq)[i] <- rota2$newlabel[i]
+#  #FUNCTION#
 # }
 # results = parLapply(cl, inputs, processInput)  
 # stopCluster(cl)  
@@ -871,7 +863,7 @@ write.dna(rota.seq, "rota_annotated.fas", format = "fasta")
 # 
 # inputs <- 1:50000  
 # processInput <- function(i) {  
-#   names(rota.seq)[i] <- rota2$newlabel[i]
+#   #FUNCTION#
 # }
 # 
 # results <- foreach(i=inputs) %dopar% {  
