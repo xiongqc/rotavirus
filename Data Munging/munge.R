@@ -841,32 +841,29 @@ names(rota.seq)<- rota2$newlabel
 
 write.dna(rota.seq, "rota_annotated.fas", format = "fasta")
 
-# for future parallelizing (http://stackoverflow.com/questions/17196261/understanding-the-differences-between-mclapply-and-parlapply-in-r)
-# library(parallel)
-# numCores <- detectCores()
-# cl <- makeCluster(numCores) 
-# inputs <- 1:50000  
-# processInput <- function(i) {  
-#  #FUNCTION#
-# }
-# results = parLapply(cl, inputs, processInput)  
-# stopCluster(cl)  
+# COMBINE HMMR SEGMENT DATA ####
 
-# parallelizing using foreach
-# library(foreach)  
-# library(doParallel)  
-# library(parallel)
-# 
-# numCores <- detectCores()  
-# cl <- makeCluster(numCores)  
-# registerDoParallel(cl)
-# 
-# inputs <- 1:50000  
-# processInput <- function(i) {  
-#   #FUNCTION#
-# }
-# 
-# results <- foreach(i=inputs) %dopar% {  
-#   processInput(i)
-# }
+# Load
+combine <- read.table("rota_compare.txt",header=T,row.names=NULL,sep="\t",stringsAsFactors=FALSE) #new
+#summary(combine)
 
+# Replace "-" fields with "NULL" in HMMER
+combine$HMMER_segment[grep("-",combine$HMMER_segment)] <- "NULL"
+
+# Combine HMMR data to GENBANK Data
+combine$final <- ""
+combine$final <- combine$GenBank_segment
+combine$final[grep("NULL",combine$GenBank_segment)] <- combine$HMMER_segment[grep("NULL",combine$GenBank_segment)]
+
+# Create match vector
+trfvector <- match(rota2$accession,combine$seqID)
+#trfector
+
+rota2$segment3 <- ""
+rota2$segment3 <- combine$final[trfvector]
+
+rota2$newlabel2 <- paste(rota2$accession,rota2$host2, rota2$country2, rota2$collection_date2, "Rotavirus", rota2$organism2, "Strain", rota2$strain2, "Segment", rota2$segment3, sep="_")
+
+names(rota.seq)<- rota2$newlabel2
+
+write.dna(rota.seq, "rota_annotated_v2.fas", format = "fasta")
