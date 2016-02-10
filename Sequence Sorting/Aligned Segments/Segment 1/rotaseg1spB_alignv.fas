@@ -57,7 +57,7 @@ tcccgttaaatatctcttcggctgaaaaagtcttttccataagattgaatttaccttctc
 atttgtatgagattgtcatgttgttattgttatatgaatatgtacactatgtattcatgt
 cccacaaaacttttatcgctacaatgcatgcttcaagtcaagaagaatctgcgcgattaa
 ctaaactcgtgctacatatgttagatgatatacaactggatcaagtgtcattttcagatg
-acgcttggtagatcataacta-ataaaaaccc
+acgcttggtagatcataactaataaaaa-ccc
 >GU377213_Human_India_2008-01-XX_Rotavirus_B_Strain_NULL_Segment_1
 ggcacaatatggactcctttcaatttttcagttggttactgaaggatattgaaaggaatc
 tactgtacaccagtttggtatatacacgtccaagaattgcaatagttcgatatgaagaaa
@@ -117,7 +117,7 @@ tcccgttaaatatctcttcggctgaaaaagtcttttccataagattgaatttaccttctc
 atttgtatgagattgtcatgttgttattgttatatgaatatgtacactatgtattcatgt
 cccacaaaacttttatcgctacaatgcatgcttcaagtcaagaagaatctgcgcgattaa
 ctaaactcgtgctacatatgttagatgatatacaactggatcaagtgtcattttcagatg
-acgcttggtagatcataacta-ataaaaaccc
+acgcttggtagatcataactaataaaaa-ccc
 >GU377224_Human_India_2007-11-XX_Rotavirus_B_Strain_NULL_Segment_1
 ggcacaatatggactcctttcaatttttcagttggttactgaaggatattgaaaggaatc
 tactgtacaccagtttggtatatacacgtccaagaattgcaatagttcgatatgaagaaa
@@ -177,7 +177,7 @@ tcccgttaaatatctcttcggctgaaaaagtcttttccataagattgaatttaccttctc
 atttgtatgagattgtcatgttgttattgttatatgaatatgtacactatgtattcatgt
 cccacaaaacttttatcgctacaatgcatgcttcaagtcaagaagaatctgcgcgattaa
 ctaaactcgtgctacatatgttagatgatatacaactggatcgagtgtcattttcagatg
-acgcttggtagatcataacta-ataaaaaccc
+acgcttggtagatcataactaataaaaa-ccc
 >GU391301_Human_Bangladesh_2002-03-XX_Rotavirus_B_Strain_NULL_Segment_1
 ggcacaatatggactcctttcaatttttcagttggttactgaaggatattgaaaggaatc
 tactgtacaccagtttggtatatacaagtccaagaattgcaatagttcgatatgaagaaa
@@ -237,7 +237,7 @@ tcccgttaaatgtctcttcggctgaaaaagtcttttccataagattgaatttaccttctc
 atttgtatgagattgtcatgttgttattgttatatgaatatgtacactatgtattcatgt
 cccacaaaacttttaccgctacaatgcatgcttcaagtcaagaagaatctgcgcgattaa
 ctaaactcgtgctacatatgttagatgatatacaactggatcaagtgtcattttcagatg
-acgcttggtagatcataacta-ataaaaaccc
+acgcttggtagatcataactaataaaaa-ccc
 >JQ904147_Human_India_1995-11-XX_Rotavirus_B_Strain_NULL_Segment_1
 ----------------------atttttcagttggttactgaaggacattgaaaggaatc
 tactgtacaccagtttggtatatacaagtccaagaattgcaatagttcgatatgaagaaa
@@ -279,7 +279,7 @@ ttaaagcacttgcttcatatacaggtctagagatggcaaaaagattcatagtatgtggaa
 aaatattcgaaagaggggcaattcccatttttacggctgaaagaccttacggaaccgatg
 tatcaatacaatccatgtgcggatcatccatttattcgtctgccgttaatgcgtaccgtg
 ggtttggcgattcatattttgcgttcatgcaagatgtattggttcctccatcatcatccg
-taaggataactggaagattaagggtgttgttgtcaccagtaactttgtatgcaactggtc
+taaggataactggaagattaagggtgttgttgtcaccagtaactttgtatgcaactggtc
 cgctcagctttgaaataactcctcagggattaggaggcagatgtcgtatgtacacacaat
 cagaaaaacttttcacattatttaagctgttaactcaaactgtatctgtttcagttactc
 cagaagaaattaagaagtactctaacacgcctcaatttaaaaaacgtacaagcgtcatga
@@ -1031,19 +1031,19 @@ acg-----------------------------
 ------------------------------------------------------------
 ------------------------------------------------------------
 ------------------------------------------------------------
---------atatttaaactg----------------------------------------
 ------------------------------------------------------------
 ------------------------------------------------------------
 ------------------------------------------------------------
 ------------------------------------------------------------
 ------------------------------------------------------------
------------------------------------ttctcatcaacatttcatgtgggac
+------------------------------------------------------------
+-----------------------atatttaaactgttctcatcaacatttcatgtgggac
 acaggattgataatgcccaagatgcaatcacagaccaagtgacagcgacatatacgtcaa
 acgtcaacagggagatgtacgattcgtactactacaagctcaagcagatgttaaaaggag
 agataatccagtatgtcgaggaccatgtcactaggcagtacaaagatgtcacagctgagt
 cactatctgcactcgccaactcttcaaatggattctcaaaagaagtaaggttcatagaca
 gaaacataaaaacaacaaagaagattctacacctggacagcgatctgattgccaacgatt
-at------------------t---------------------------------------
+att---------------------------------------------------------
 ------------------------------------------------------------
 ------------------------------------------------------------
 ------------------------------------------------------------
@@ -1204,7 +1204,7 @@ tactttataccagtcttgtatacactaatcctaagatcgctatagtgcgatatgaaccaa
 gcgaaaatgcgaaattgtggcgatccaaagagttgaacacggactcaccaaacgaattat
 tattgacgttgaagaagacattggacgaatgctcaactctagacgaaaaaattgaaacat
 tactaaggatacgatacttcacagtgtacgttggagataaatcagataaaaggaatatca
-tacgttcttggctgtcaactacgatcaatagactaaatgtgga---agagtatgcatcaa
+tacgttcttggctg---tcaactacgatcaatagactaaatgtggaagagtatgcatcaa
 ttcaagaaattgaactgcaggctaagcaatggagagctgaaaacgcgaagtctttgcgac
 catatcattacaacattcccatcaatgaatatctaagggataacgaaattgaggttctcg
 acacgggtgacaataggtggaagtccgatacgcttcaaggattattgcctaacttttacc
