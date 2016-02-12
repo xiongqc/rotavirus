@@ -1,0 +1,17 @@
+gaps
+80-100: FJ811905 checked
+110-120: FJ811904 checked
+120-125: DQ355957 checked
+130-150: KP752770 mixed sample: removed
+160: KJ454591 checked
+220: EF672605 checked
+460-470: KR052738 mixed sample: removed
+575-580: DQ487204-JF720870 removed; contradicting annotations; different samples from diff years but exact same sequence???
+620-635: KC174869 checked
+760-775: KC174869 checked
+790: multiple checked
+845: AB454420 checked
+875-880: AB749186 checked
+945-1030: DQ355961 checked. large insertion?
+1160-1170
+
