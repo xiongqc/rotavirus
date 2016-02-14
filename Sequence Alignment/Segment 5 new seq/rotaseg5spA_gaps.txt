@@ -1,8 +1,0 @@
-145: HQ846847 checked
-775: DQ838599 checked
-1825-3000: AF190169 lab rearrangement: remove
-185-1630: KJ532803 lab rearrangement: removed
-3260: FJ423156 wa variant rearrangement
-4430/4475/4490-4530: AB908907
-
-check KF185099 after realignment
