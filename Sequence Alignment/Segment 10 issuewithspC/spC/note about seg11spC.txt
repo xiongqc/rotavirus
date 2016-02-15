@@ -1,3 +1,0 @@
-labelled as NSP5 (segment 11)
-doesnt align with existing segment 11 sequences
-doesnt align with other segment 10C sequences
