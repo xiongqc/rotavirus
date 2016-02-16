@@ -1,0 +1,5 @@
+Detection by at least 3 methods
+NSP4C
+VP2C
+VP4C
+VP6B
