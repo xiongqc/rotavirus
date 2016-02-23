@@ -66,7 +66,7 @@ getBEASTxml<-function(seqs,outfile){
   }
   
   if(!is.na(taxa.noyear[1])){
-    for(i in c(taxa.nosampling)){
+    for(i in c(taxa.noyear)){
       taxon<-addChildren(taxa,newXMLNode("taxon",newXMLNode("date",attrs=c(value=dates[i],direction="forwards",units="years")),attrs=c(id=nam[i])))
     }
   }
@@ -150,12 +150,12 @@ getBEASTxml<-function(seqs,outfile){
     }
   }
 
-  # log sampled tip dates
-  if(!is.na(taxa.sampling[1])){
-    for(i in c(taxa.sampling)){
-      addChildren(logfile,newXMLNode("parameter",attrs=c(idref=paste0("age(",nam[i],")"))))
-    }
-  }
+#   # log sampled tip dates
+#   if(!is.na(taxa.sampling[1])){
+#     for(i in c(taxa.sampling)){
+#       addChildren(logfile,newXMLNode("parameter",attrs=c(idref=paste0("age(",nam[i],")"))))
+#     }
+#   }
   
   # edit name of trees file
   treefile<-rootNode[["mcmc"]][[8]]
