@@ -1080,7 +1080,7 @@
     </uniformOperator>
   </operators>
   <!-- Define MCMC                                                             -->
-  <mcmc id="mcmc" chainLength="50000000" autoOptimize="true" operatorAnalysis="NSP2Br.ops.txt">
+  <mcmc id="mcmc" chainLength="100000000" autoOptimize="true" operatorAnalysis="NSP2Br.ops.txt">
     <posterior id="posterior">
       <prior id="prior">
         <gammaPrior shape="0.05" scale="10.0" offset="0.0">
@@ -1202,7 +1202,7 @@
       </column>
     </log>
     <!-- write log to file                                                       -->
-    <log id="fileLog" logEvery="25000" fileName="NSP2Br.log.txt" overwrite="false">
+    <log id="fileLog" logEvery="10000" fileName="NSP2Br.log.txt" overwrite="false">
       <posterior idref="posterior"/>
       <prior idref="prior"/>
       <likelihood idref="likelihood"/>
@@ -1249,7 +1249,7 @@
       <parameter idref="age(AY539861_Human_NULL_NULL_Rotavirus_B_Strain_NULL_NSP2)"/>
     </log>
     <!-- write tree log to file                                                  -->
-    <logTree id="treeFileLog" logEvery="25000" nexusFormat="true" fileName="NSP2Br.trees.txt" sortTranslationTable="true">
+    <logTree id="treeFileLog" logEvery="10000" nexusFormat="true" fileName="NSP2Br.trees.txt" sortTranslationTable="true">
       <treeModel idref="treeModel"/>
       <trait name="rate" tag="rate">
         <discretizedBranchRates idref="branchRates"/>
