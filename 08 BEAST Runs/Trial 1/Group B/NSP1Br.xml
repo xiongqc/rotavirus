@@ -379,15 +379,15 @@
     <uniformOperator weight="1">
       <parameter idref="age(JQ904233_Human_India_2009-10-XX_Rotavirus_B_Strain_NULL_NSP1)"/>
     </uniformOperator>
-    <randomWalkOperator windowSize="1.0" weight="1">
+    <uniformOperator weight="1">
       <parameter idref="age(KR052709_Pig_USA_NULL_Rotavirus_B_Strain_GXP[X]_NSP1)"/>
-    </randomWalkOperator>
-    <randomWalkOperator windowSize="1.0" weight="1">
+    </uniformOperator>
+    <uniformOperator weight="1">
       <parameter idref="age(AY238391_Human_NULL_NULL_Rotavirus_B_Strain_NULL_NSP1)"/>
-    </randomWalkOperator>
-    <randomWalkOperator windowSize="1.0" weight="1">
+    </uniformOperator>
+    <uniformOperator weight="1">
       <parameter idref="age(AY539862_Human_NULL_NULL_Rotavirus_B_Strain_NULL_NSP1)"/>
-    </randomWalkOperator>
+    </uniformOperator>
   </operators>
   <!-- Define MCMC                                                             -->
   <mcmc id="mcmc" chainLength="50000000" autoOptimize="true" operatorAnalysis="NSP1Br.ops.txt">

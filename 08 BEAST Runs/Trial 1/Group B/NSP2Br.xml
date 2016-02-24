@@ -1018,66 +1018,66 @@
     <uniformOperator weight="1">
       <parameter idref="age(AB673230_Pig_Japan_2008-10-XX_Rotavirus_B_Strain_NULL_NSP2)"/>
     </uniformOperator>
-    <randomWalkOperator windowSize="1.0" weight="1">
+    <uniformOperator weight="1">
       <parameter idref="age(EF577257_Pig_Brazil_NULL_Rotavirus_B_Strain_NULL_NSP2)"/>
-    </randomWalkOperator>
-    <randomWalkOperator windowSize="1.0" weight="1">
+    </uniformOperator>
+    <uniformOperator weight="1">
       <parameter idref="age(EF577258_Pig_Brazil_NULL_Rotavirus_B_Strain_NULL_NSP2)"/>
-    </randomWalkOperator>
-    <randomWalkOperator windowSize="1.0" weight="1">
+    </uniformOperator>
+    <uniformOperator weight="1">
       <parameter idref="age(EF577259_Pig_Brazil_NULL_Rotavirus_B_Strain_NULL_NSP2)"/>
-    </randomWalkOperator>
-    <randomWalkOperator windowSize="1.0" weight="1">
+    </uniformOperator>
+    <uniformOperator weight="1">
       <parameter idref="age(KR052710_Pig_USA_NULL_Rotavirus_B_Strain_GXP[X]_NSP2)"/>
-    </randomWalkOperator>
-    <randomWalkOperator windowSize="1.0" weight="1">
+    </uniformOperator>
+    <uniformOperator weight="1">
       <parameter idref="age(AY238383_Human_NULL_NULL_Rotavirus_B_Strain_NULL_NSP2)"/>
-    </randomWalkOperator>
-    <randomWalkOperator windowSize="1.0" weight="1">
+    </uniformOperator>
+    <uniformOperator weight="1">
       <parameter idref="age(AY238393_Human_NULL_NULL_Rotavirus_B_Strain_NULL_NSP2)"/>
-    </randomWalkOperator>
-    <randomWalkOperator windowSize="1.0" weight="1">
+    </uniformOperator>
+    <uniformOperator weight="1">
       <parameter idref="age(AY941789_Human_India_NULL_Rotavirus_B_Strain_NULL_NSP2)"/>
-    </randomWalkOperator>
-    <randomWalkOperator windowSize="1.0" weight="1">
+    </uniformOperator>
+    <uniformOperator weight="1">
       <parameter idref="age(EU436849_Human_India_NULL_Rotavirus_B_Strain_NULL_NSP2)"/>
-    </randomWalkOperator>
-    <randomWalkOperator windowSize="1.0" weight="1">
+    </uniformOperator>
+    <uniformOperator weight="1">
       <parameter idref="age(AY864914_Human_India_NULL_Rotavirus_B_Strain_NULL_NSP2)"/>
-    </randomWalkOperator>
-    <randomWalkOperator windowSize="1.0" weight="1">
+    </uniformOperator>
+    <uniformOperator weight="1">
       <parameter idref="age(AY941777_Human_India_NULL_Rotavirus_B_Strain_NULL_NSP2)"/>
-    </randomWalkOperator>
-    <randomWalkOperator windowSize="1.0" weight="1">
+    </uniformOperator>
+    <uniformOperator weight="1">
       <parameter idref="age(AY941779_Human_India_NULL_Rotavirus_B_Strain_NULL_NSP2)"/>
-    </randomWalkOperator>
-    <randomWalkOperator windowSize="1.0" weight="1">
+    </uniformOperator>
+    <uniformOperator weight="1">
       <parameter idref="age(AY941791_Human_India_NULL_Rotavirus_B_Strain_NULL_NSP2)"/>
-    </randomWalkOperator>
-    <randomWalkOperator windowSize="1.0" weight="1">
+    </uniformOperator>
+    <uniformOperator weight="1">
       <parameter idref="age(AY941792_Human_India_NULL_Rotavirus_B_Strain_NULL_NSP2)"/>
-    </randomWalkOperator>
-    <randomWalkOperator windowSize="1.0" weight="1">
+    </uniformOperator>
+    <uniformOperator weight="1">
       <parameter idref="age(AY941776_Human_India_NULL_Rotavirus_B_Strain_NULL_NSP2)"/>
-    </randomWalkOperator>
-    <randomWalkOperator windowSize="1.0" weight="1">
+    </uniformOperator>
+    <uniformOperator weight="1">
       <parameter idref="age(AY941778_Human_India_NULL_Rotavirus_B_Strain_NULL_NSP2)"/>
-    </randomWalkOperator>
-    <randomWalkOperator windowSize="1.0" weight="1">
+    </uniformOperator>
+    <uniformOperator weight="1">
       <parameter idref="age(AY941790_Human_India_NULL_Rotavirus_B_Strain_NULL_NSP2)"/>
-    </randomWalkOperator>
-    <randomWalkOperator windowSize="1.0" weight="1">
+    </uniformOperator>
+    <uniformOperator weight="1">
       <parameter idref="age(AY864913_Human_India_NULL_Rotavirus_B_Strain_NULL_NSP2)"/>
-    </randomWalkOperator>
-    <randomWalkOperator windowSize="1.0" weight="1">
+    </uniformOperator>
+    <uniformOperator weight="1">
       <parameter idref="age(AJ867609_Human_China_NULL_Rotavirus_B_Strain_NULL_NSP2)"/>
-    </randomWalkOperator>
-    <randomWalkOperator windowSize="1.0" weight="1">
+    </uniformOperator>
+    <uniformOperator weight="1">
       <parameter idref="age(AY212934_Human_China_NULL_Rotavirus_B_Strain_NULL_NSP2)"/>
-    </randomWalkOperator>
-    <randomWalkOperator windowSize="1.0" weight="1">
+    </uniformOperator>
+    <uniformOperator weight="1">
       <parameter idref="age(AY539861_Human_NULL_NULL_Rotavirus_B_Strain_NULL_NSP2)"/>
-    </randomWalkOperator>
+    </uniformOperator>
   </operators>
   <!-- Define MCMC                                                             -->
   <mcmc id="mcmc" chainLength="50000000" autoOptimize="true" operatorAnalysis="NSP2Br.ops.txt">

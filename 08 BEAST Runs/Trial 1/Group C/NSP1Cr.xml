@@ -325,21 +325,21 @@
     <uniformOperator weight="1">
       <parameter idref="age(KP342030_Human_China_2011-XX-XX_Rotavirus_C_Strain_NULL_NSP1)"/>
     </uniformOperator>
-    <randomWalkOperator windowSize="1.0" weight="1">
+    <uniformOperator weight="1">
       <parameter idref="age(AB738402_Cow_Japan_NULL_Rotavirus_C_Strain_NULL_NSP1)"/>
-    </randomWalkOperator>
-    <randomWalkOperator windowSize="1.0" weight="1">
+    </uniformOperator>
+    <uniformOperator weight="1">
       <parameter idref="age(AB738407_Cow_Japan_NULL_Rotavirus_C_Strain_NULL_NSP1)"/>
-    </randomWalkOperator>
-    <randomWalkOperator windowSize="1.0" weight="1">
+    </uniformOperator>
+    <uniformOperator weight="1">
       <parameter idref="age(AY770977_Human_India_NULL_Rotavirus_C_Strain_NULL_NSP1)"/>
-    </randomWalkOperator>
-    <randomWalkOperator windowSize="1.0" weight="1">
+    </uniformOperator>
+    <uniformOperator weight="1">
       <parameter idref="age(AY820181_Human_India_NULL_Rotavirus_C_Strain_NULL_NSP1)"/>
-    </randomWalkOperator>
-    <randomWalkOperator windowSize="1.0" weight="1">
+    </uniformOperator>
+    <uniformOperator weight="1">
       <parameter idref="age(AY820180_Human_India_NULL_Rotavirus_C_Strain_NULL_NSP1)"/>
-    </randomWalkOperator>
+    </uniformOperator>
   </operators>
   <!-- Define MCMC                                                             -->
   <mcmc id="mcmc" chainLength="50000000" autoOptimize="true" operatorAnalysis="NSP1Cr.ops.txt">
