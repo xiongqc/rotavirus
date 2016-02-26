@@ -5,6 +5,6 @@ if [ $# != 1 ]; then
     exit
 fi
 
-transeq -filter $1 | sed -r -e 's/\_[0-9]*$//g'
+transeq -filter $1 | gsed -r -e 's/\_[0-9]*$//g'
 
 
