@@ -1,0 +1,33 @@
+rule all:
+  input:
+    "NSP1Arra.fas.orf.aa.mafft"
+
+rule longorf:
+  input:
+    "{d1}"
+  output:
+    "{d1}.orf"
+  shell:
+    "longorf.sh {input} > {output}"
+
+rule translate:
+  input:
+    "{d1}"
+  output:
+    "{d1}.aa"
+  shell:
+    "translate.sh {input} > {output}"
+
+rule align:
+  input:
+    "{d1}"
+  output:
+    "{d1}.align"
+  shell:
+    "mafft {input} > {output}"
+
+rule pal2nal:
+  input:
+    ["{d1}","{d1}.aa.align"]
+  output:
+    "{d1}.revalign"
