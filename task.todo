@@ -5,18 +5,13 @@ Group B:
     ☐ replace [X] in tree files with X
       ctrl+shift+f in a tree folder to replace all; multiple variables eg. [2]
     ☐ color and label trees
+  ☐ Rerun tests with hosts and location parameter
 Group C:
-  ☐ Edit XML
-    ☐ chain length
-    ☐ frequencies
-    ☐ ucld.mean
-  ☐ Reruns
-    ☐ upload
-    ☐ clone parameters with new files
   ☐ Draw trees
     ☐ replace [X] in tree files with X
       ctrl+shift+f in a tree folder to replace all; multiple variables eg. [2]
     ☐ color and label trees
+  ☐ Rerun tests with hosts and location parameter
 Report:
   ☐ Introduction
     ☐ Aim
@@ -35,6 +30,13 @@ Report:
 
 ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿
 Archive:
+ ✔ upload @done (16-02-26 15:56) @project(Group C)
+ ✔ ucld.mean @done (16-02-26 15:56) @project(Group C)
+ ✔ frequencies @done (16-02-26 15:56) @project(Group C)
+ ✔ clone parameters with new files @done (16-02-26 15:56) @project(Group C)
+ ✔ chain length @done (16-02-26 15:56) @project(Group C)
+ ✔ Reruns @done (16-02-26 15:56) @project(Group C)
+ ✔ Edit XML @done (16-02-26 15:56) @project(Group C)
  ✘ population size (2 para) @cancelled (16-02-26 03:40) @project(Group C)
  ✔ upload @done (16-02-26 03:38) @project(Group B)
  ✔ clone parameters with new files @done (16-02-26 03:38) @project(Group B)
