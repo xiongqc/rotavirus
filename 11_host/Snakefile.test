@@ -1,0 +1,119 @@
+IDS, = glob_wildcards("{id}.fas")
+
+#rule all:
+#    input:
+#        expand(["{id}.fas.macse.nt","{id}.fas.macse.aa"],id=IDS)
+
+rule all:
+    input:
+        expand(["{id}.fas.iqtree","{id}.fas.treefile","{id}.fas.mldist","{id}.fas.log"],id=IDS)
+
+#rule all:
+#    input:
+#        expand("{id}.fas.orf.revalign.trim",id=IDS)
+
+#rule all:
+#    input:
+#        expand("{id}.fas.orf.revalign.nonn.dedup",id=IDS)
+
+#rule all:
+#    input:
+#        expand("{id}.fas.nonn.orf.revalign.dedup.trimorf.longseq",id=IDS)
+
+rule longorf:
+    input:
+        "{d1}"
+    output:
+        temp("{d1}.orf")
+    shell:
+        "./longorf.sh {input} > {output}"
+
+rule translate:
+    input:
+        "{d1}"
+    output:
+        temp("{d1}.aa")
+    shell:
+        "./translate.sh {input} > {output}"
+
+rule align:
+    input:
+        "{d1}"
+    output:
+        temp("{d1}.align")
+    shell:
+        "mafft {input} > {output}"
+
+rule pal2nal:
+    input:
+        ["{d1}","{d1}.aa.align"]
+    output:
+        "{d1}.revalign"
+    shell:
+        "perl pal2nal.pl {input[1]}  {input[0]} -output fasta > {output}"
+
+rule macse:
+    input:
+        "{d1}"
+    output:
+        ["{d1}.macse.nt","{d1}.macse.aa"]
+    shell:
+        "java -jar macse_v1.01b.jar -prog alignSequences -seq {input} -out_AA {output[1]} -out_NT {output[0]}"
+
+rule trim:
+    input:
+        "{d1}"
+    output:
+        ["{d1}.trim","{d1}.trim.cols"]
+    shell:
+        "trimal -in {input} -out {output[0]} -keepheader -automated1 -colnumbering -fasta > {output[1]}"
+
+rule trim_long:
+    input:
+        "{d1}"
+    output:
+        ["{d1}.trim_long"]
+    shell:
+        "trimal -in {input} -out {output} -keepheader -resoverlap 0.9 -seqoverlap 90 -fasta"
+
+rule dedup:
+    input:
+        "{d1}"
+    output:
+        "{d1}.dedup"
+    shell:
+        "python ./dedup.py {input} {output}"
+
+rule removenn:
+    input:
+        "{d1}"
+    output:
+        "{d1}.nonn"
+    shell:
+        "./removenn.sh {input} > {output}"
+
+rule trimorf:
+    input:
+        "{d1}"
+    output:
+        "{d1}.trimorf"
+    shell:
+        "python3 ./trimseqs.py {input} {output} 300 2 0.1"
+
+rule longseq:
+  input:
+      "{d1}"
+  output:
+      "{d1}.longseq"
+  shell:
+      "python3 ./longseqs.py {input} {output} 0.9"
+
+rule iqtree:
+    input:
+        "{d1}"
+    output:
+        ["{d1}.iqtree","{d1}.treefile","{d1}.mldist","{d1}.log"]
+    threads:
+        2
+    shell:
+        "iqtree-omp -s {input} -st CODON -m MG+F3x4+R4 -seed 1234 -nt {threads} "
