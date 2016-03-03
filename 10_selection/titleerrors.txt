@@ -1,0 +1,29 @@
+title errors
+
+B
+
+NSP1:n
+NSP2:n
+NSP3:n
+NSP4:n
+NSP5:n
+VP1: n
+VP2: n
+VP3: n
+VP4: n
+VP6: n
+VP7: n
+
+C
+
+NSP1:y
+NSP2:y
+NSP3:y
+NSP4:y
+NSP5:y
+VP1: y
+VP2: y
+VP3: y
+VP4: y
+VP6: y
+VP7: y

@@ -1,0 +1,53 @@
+NSP1: 	npatterns = 328; 	runspeed = 0.03 hours/million;
+NSP2: 	npatterns = 268; 	runspeed = 0.03 hours/million;
+NSP3: 	npatterns = 376; 	runspeed = 0.04 hours/million;
+NSP4: 	npatterns = 372; 	runspeed = 0.06 hours/million;
+NSP5: 	npatterns = 293; 	runspeed = 0.04 hours/million;
+VP1: 	npatterns = 957; 	runspeed = 0.04 hours/million;
+VP2: 	npatterns = 727; 	runspeed = 0.05 hours/million;
+VP3: 	npatterns = 606; 	runspeed = 0.04 hours/million;
+VP4: 	npatterns = 1580; 	runspeed = 0.12 hours/million;
+VP6: 	npatterns = 824; 	runspeed = 0.11 hours/million;
+VP7: 	npatterns = 855; 	runspeed = 0.17 hours/million;
+
+Time for 1E9 runs
+
+NSP1: 	30.00
+NSP2:	30.00
+NSP3:	40.00
+NSP4:	60.00
+NSP5:	40.00
+VP1: 	40.00
+VP2: 	50.00
+VP3: 	40.00
+VP4: 	120.00
+VP6: 	110.00
+VP7: 	170.00
+
+Total: 
+730.00*4=2920
+
+NSP1:	30.00 
+NSP2:	30.00
+NSP3:	40.00
+NSP4:	60.00
+NSP5:	40.00
+VP1: 	40.00
+VP2: 	50.00
+VP3: 	40.00
+VP4: 	120.00
+VP6: 	110.00
+VP7: 	170.00
+
+730.00
+
+<<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+</body>
+</html>
+<img src="" alt="">

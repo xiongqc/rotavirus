@@ -1,0 +1,13 @@
+group C parameters 2
+
+NSP1: 	npatterns = 310; 0.04
+NSP2: 	npatterns = 244; 0.04
+NSP3: 	npatterns = 334; 0.05
+NSP4: 	npatterns = 252; 0.06
+NSP5: 	npatterns = 238; 0.04
+VP1: 	npatterns = 788; 0.11
+VP2: 	npatterns = 560; 0.07
+VP3: 	npatterns = 560; 0.06
+VP4: 	npatterns = 1362; 0.3
+VP6: 	npatterns = 615; 0.2
+VP7: 	npatterns = 616; 0.29
