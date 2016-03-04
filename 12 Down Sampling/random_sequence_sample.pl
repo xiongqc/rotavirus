@@ -82,7 +82,7 @@ while (<$INFILE>) {
         my $title    = $lines[0];
         my $sequence = $_;
         $sequence =~ s/\Q$title\E//;
-        $sequence =~ s/[^a-zA-Z]//g;
+        $sequence =~ s/[^a-zA-Z\-]//g;
         while ( $chosen[$count] > 0 ) {
             print {$OUTFILE} ">$title\n$sequence\n";
             $chosen[$count]--;
