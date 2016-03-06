@@ -1,0 +1,9 @@
+echo '3
+2
+1
+/home/simon/Projects/rotavirus/rotavirus/11_host/VP4Crra.fas
+1
+012345
+/home/simon/Projects/rotavirus/rotavirus/11_host/VP4Crra.fas.treefile.sm
+1
+' > VP4Crra.fas.hostdnds_null_config

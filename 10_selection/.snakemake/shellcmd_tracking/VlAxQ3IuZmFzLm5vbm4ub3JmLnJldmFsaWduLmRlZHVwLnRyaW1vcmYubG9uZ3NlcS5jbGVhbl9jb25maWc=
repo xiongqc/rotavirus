@@ -1,0 +1,7 @@
+echo '4
+6
+1
+/home/simon/Projects/rotavirus/rotavirus/10_selection/VP1Cr.fas.nonn.orf.revalign.dedup.trimorf.longseq
+4
+/home/simon/Projects/rotavirus/rotavirus/10_selection/VP1Cr.fas.nonn.orf.revalign.dedup.trimorf.longseq.clean
+' > VP1Cr.fas.nonn.orf.revalign.dedup.trimorf.longseq.clean_config

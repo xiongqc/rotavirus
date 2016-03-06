@@ -1,0 +1,105 @@
+
+[2J[H       /HYPHY 2.220150625beta(MP) for Linux on x86_64\       
+***************** TYPES OF STANDARD ANALYSES *****************
+
+
+	(1) Basic Analyses
+	(2) Codon Selection Analyses
+	(3) Compartmentalization
+	(4) Data File Tools
+	(5) Miscellaneous
+	(6) Model Comparison
+	(7) Kernel Analysis Tools
+	(8) Molecular Clock
+	(9) Phylogeny Reconstruction
+	(10) Positive Selection
+	(11) Recombination
+	(12) Selection/Recombination
+	(13) Relative Rate
+	(14) Relative Ratio
+	(15) Substitution Rates
+
+ Please select type of analyses you want to list (or press ENTER to process custom batch file):
+[2J[H ***************** FILES IN 'Compartmentalization' ***************** 
+
+
+	(1) Peter Simmonds' Association Index (AI).
+	(2) Fit several dN/dS to branch classes, based on a pre-partitioned tree.
+	(3) Split a tree into two clades (compartments) and a separating branch and test for equality of dN/dS between compartments and for selection along the separating branch using a series of Likelihood Ratio Tests.
+	(4) Assess the correlation between phylogenetic and compartment segregation using generalized correlation coefficients and permutation tests.
+	(5) Compute various measures of F_ST and (optionally) perform permutation tests.
+	(6) Peform a Slatkin-Maddison test for the number migrations.
+	(7) Test whether a group of sequences in a sample cluster together
+
+ Please select the file you want to use (or press ENTER to return to the list of analysis types):
+
+			+-------------------+
+			|Choose Genetic Code|
+			+-------------------+
+
+
+	(1):[Universal] Universal code. (Genebank transl_table=1).
+	(2):[Vertebrate mtDNA] Vertebrate mitochondrial DNA code. (Genebank transl_table=2).
+	(3):[Yeast mtDNA] Yeast mitochondrial DNA code. (Genebank transl_table=3).
+	(4):[Mold/Protozoan mtDNA] Mold, Protozoan and Coelenterate mitochondrial DNA and the Mycloplasma/Spiroplasma code. (Genebank transl_table=4).
+	(5):[Invertebrate mtDNA] Invertebrate mitochondrial DNA code. (Genebank transl_table=5).
+	(6):[Ciliate Nuclear] Ciliate, Dasycladacean and Hexamita Nuclear code. (Genebank transl_table=6).
+	(7):[Echinoderm mtDNA] Echinoderm mitochondrial DNA code. (Genebank transl_table=9).
+	(8):[Euplotid Nuclear] Euplotid Nuclear code. (Genebank transl_table=10).
+	(9):[Alt. Yeast Nuclear] Alternative Yeast Nuclear code. (Genebank transl_table=12).
+	(10):[Ascidian mtDNA] Ascidian mitochondrial DNA code. (Genebank transl_table=13).
+	(11):[Flatworm mtDNA] Flatworm mitochondrial DNA code. (Genebank transl_table=14).
+	(12):[Blepharisma Nuclear] Blepharisma Nuclear code. (Genebank transl_table=15).
+	(13):[Chlorophycean mtDNA] Chlorophycean Mitochondrial Code (transl_table=16).
+	(14):[Trematode mtDNA] Trematode Mitochondrial Code (transl_table=21).
+	(15):[Scenedesmus obliquus mtDNA] Scenedesmus obliquus mitochondrial Code (transl_table=22).
+	(16):[Thraustochytrium mtDNA] Thraustochytrium Mitochondrial Code (transl_table=23).
+
+ Please choose an option (or press q to cancel selection):
+/usr/local/lib/hyphy/TemplateBatchFiles/Locate a codon file::
+
+			+---------------------------+
+			|Site-to-site rate variation|
+			+---------------------------+
+
+
+	(1):[None] No site-to-site rate variation
+	(2):[Mutation Rate] Vary mutation rate site-to-site
+	(3):[dN/dS] Vary dN/dS ratio site-to-site
+	(4):[Both] Vary dS and dN across sites
+
+ Please choose an option (or press q to cancel selection):
+Please enter a 6 character model designation (e.g:010010 defines HKY85):
+/usr/local/lib/hyphy/TemplateBatchFiles/Locate tree and branch splits file::
+Loaded 3 branch partitions
+How many dN/dS branch classes would you like to use [1-3]?
+Using 1 dN/dS branch classes
+
+
+Allocated branch set Nonhuman --> Human to dN/dS class 1
+
+Allocated branch set Nonhuman to rate class 1
+Allocated branch set Human to rate class 1
+
+Branch set Nonhuman --> Human has been mapped to dNdS_1
+Branch set Nonhuman has been mapped to dNdS_1
+Branch set Human has been mapped to dNdS_1
+
+Fitting summary:
+
+   Log-L = -2896.274693343585
+   d.f   = 49
+   sites = 312
+   AIC   = 5890.54938668717
+   c-AIC = 5909.251676763506
+
+Log Likelihood = -2896.27469334359;
+Shared Parameters:
+GT=0.1810862770912764
+CT=1.013354987060371
+AC=0.2720862129793942
+CG=0.1231695275811148
+AT=0.1567415423382893
+dNdS_1=0.06357197371152501
+
+Tree theTree=(AB738403_Cow_Japan_NULL_Rotavirus_C_Strain_NULL_NSP2:0.003069077305456913,AB738408_Cow_Japan_NULL_Rotavirus_C_Strain_NULL_NSP2:0.01358385663390455,((AB874649_Cow_Japan_2004_01_05_Rotavirus_C_Strain_NULL_NSP2:0.009399571177490535,(AB874652_Cow_Japan_2008_04_08_Rotavirus_C_Strain_NULL_NSP2:0.007551519584850264,(((((AY770979_Human_India_NULL_Rotavirus_C_Strain_NULL_NSP2:0.0189419568393807,AY781283_Human_India_NULL_Rotavirus_C_Strain_NULL_NSP2:0.005805959998604209)Node12:0.004544943801563652,((HQ185639_Human_Bangladesh_2005_XX_XX_Rotavirus_C_Strain_NULL_NSP2:0,HQ896717_Human_South:0.006872827736834803)Node16:0.001167645697691804,KT206200_Human_Italy_2012_XX_XX_Rotavirus_C_Strain_G4P_2__NSP2:0.003387533820630913)Node15:0.008012501857739992)Node11:0.001191012235707425,AY781284_Human_India_NULL_Rotavirus_C_Strain_NULL_NSP2:0)Node10:0.02428948570787921,(JN969077_Human_Russia_2008_05_XX_Rotavirus_C_Strain_NULL_NSP2:0.001159015053929835,KC594046_Human_Russia_2008_05_XX_Rotavirus_C_Strain_NULL_NSP2:0)Node21:0.01692708376667417)Node9:0.006150639728282983,(((HQ185648_Human_China_2001_XX_XX_Rotavirus_C_Strain_NULL_NSP2:0,KT206189_Human_Italy_2004_XX_XX_Rotavirus_C_Strain_G4P_2__NSP2:0.004533522534218365)Node26:0,(HQ185680_Human_Japan_2008_XX_XX_Rotavirus_C_Strain_NULL_NSP2:0,KP342042_Human_China_2011_XX_XX_Rotavirus_C_Strain_NULL_NSP2:0.001131549985037339)Node29:0.006892779737266953)Node25:0.0007610847495221896,((HQ185659_Human_China_2007_XX_XX_Rotavirus_C_Strain_NULL_NSP2:0.002270614393567329,(KP776579_Human_Hungary_2013_XX_XX_Rotavirus_C_Strain_G4P_2__NSP2:0.003404117835689841,KP844856_Human_South:0.005707383533686495)Node35:0)Node33:0.001138203704769602,KP342031_Human_China_2011_XX_XX_Rotavirus_C_Strain_NULL_NSP2:0.003410576578581128)Node32:0.003813289403770063)Node24:0.01782581737077709)Node8:0.3450729055982121)Node6:0.02525852959372994)Node4:0.003929508875456699,(AB874648_Cow_Japan_2003_12_17_Rotavirus_C_Strain_NULL_NSP2:0.01509398506762166,(AB874651_Cow_Japan_2004_06_02_Rotavirus_C_Strain_NULL_NSP2:0.002003916766589917,AB874653_Cow_Japan_2010_11_04_Rotavirus_C_Strain_NULL_NSP2:0.01778078803073422)Node41:0.01776871795549287)Node39:0)Node3:0.004514370383123938);

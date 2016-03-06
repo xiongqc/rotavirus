@@ -1,0 +1,105 @@
+
+[2J[H       /HYPHY 2.220150625beta(MP) for Linux on x86_64\       
+***************** TYPES OF STANDARD ANALYSES *****************
+
+
+	(1) Basic Analyses
+	(2) Codon Selection Analyses
+	(3) Compartmentalization
+	(4) Data File Tools
+	(5) Miscellaneous
+	(6) Model Comparison
+	(7) Kernel Analysis Tools
+	(8) Molecular Clock
+	(9) Phylogeny Reconstruction
+	(10) Positive Selection
+	(11) Recombination
+	(12) Selection/Recombination
+	(13) Relative Rate
+	(14) Relative Ratio
+	(15) Substitution Rates
+
+ Please select type of analyses you want to list (or press ENTER to process custom batch file):
+[2J[H ***************** FILES IN 'Compartmentalization' ***************** 
+
+
+	(1) Peter Simmonds' Association Index (AI).
+	(2) Fit several dN/dS to branch classes, based on a pre-partitioned tree.
+	(3) Split a tree into two clades (compartments) and a separating branch and test for equality of dN/dS between compartments and for selection along the separating branch using a series of Likelihood Ratio Tests.
+	(4) Assess the correlation between phylogenetic and compartment segregation using generalized correlation coefficients and permutation tests.
+	(5) Compute various measures of F_ST and (optionally) perform permutation tests.
+	(6) Peform a Slatkin-Maddison test for the number migrations.
+	(7) Test whether a group of sequences in a sample cluster together
+
+ Please select the file you want to use (or press ENTER to return to the list of analysis types):
+
+			+-------------------+
+			|Choose Genetic Code|
+			+-------------------+
+
+
+	(1):[Universal] Universal code. (Genebank transl_table=1).
+	(2):[Vertebrate mtDNA] Vertebrate mitochondrial DNA code. (Genebank transl_table=2).
+	(3):[Yeast mtDNA] Yeast mitochondrial DNA code. (Genebank transl_table=3).
+	(4):[Mold/Protozoan mtDNA] Mold, Protozoan and Coelenterate mitochondrial DNA and the Mycloplasma/Spiroplasma code. (Genebank transl_table=4).
+	(5):[Invertebrate mtDNA] Invertebrate mitochondrial DNA code. (Genebank transl_table=5).
+	(6):[Ciliate Nuclear] Ciliate, Dasycladacean and Hexamita Nuclear code. (Genebank transl_table=6).
+	(7):[Echinoderm mtDNA] Echinoderm mitochondrial DNA code. (Genebank transl_table=9).
+	(8):[Euplotid Nuclear] Euplotid Nuclear code. (Genebank transl_table=10).
+	(9):[Alt. Yeast Nuclear] Alternative Yeast Nuclear code. (Genebank transl_table=12).
+	(10):[Ascidian mtDNA] Ascidian mitochondrial DNA code. (Genebank transl_table=13).
+	(11):[Flatworm mtDNA] Flatworm mitochondrial DNA code. (Genebank transl_table=14).
+	(12):[Blepharisma Nuclear] Blepharisma Nuclear code. (Genebank transl_table=15).
+	(13):[Chlorophycean mtDNA] Chlorophycean Mitochondrial Code (transl_table=16).
+	(14):[Trematode mtDNA] Trematode Mitochondrial Code (transl_table=21).
+	(15):[Scenedesmus obliquus mtDNA] Scenedesmus obliquus mitochondrial Code (transl_table=22).
+	(16):[Thraustochytrium mtDNA] Thraustochytrium Mitochondrial Code (transl_table=23).
+
+ Please choose an option (or press q to cancel selection):
+/usr/local/lib/hyphy/TemplateBatchFiles/Locate a codon file::
+
+			+---------------------------+
+			|Site-to-site rate variation|
+			+---------------------------+
+
+
+	(1):[None] No site-to-site rate variation
+	(2):[Mutation Rate] Vary mutation rate site-to-site
+	(3):[dN/dS] Vary dN/dS ratio site-to-site
+	(4):[Both] Vary dS and dN across sites
+
+ Please choose an option (or press q to cancel selection):
+Please enter a 6 character model designation (e.g:010010 defines HKY85):
+/usr/local/lib/hyphy/TemplateBatchFiles/Locate tree and branch splits file::
+Loaded 3 branch partitions
+How many dN/dS branch classes would you like to use [1-3]?
+Using 1 dN/dS branch classes
+
+
+Allocated branch set Human --> Nonhuman to dN/dS class 1
+
+Allocated branch set Human to rate class 1
+Allocated branch set Nonhuman to rate class 1
+
+Branch set Human --> Nonhuman has been mapped to dNdS_1
+Branch set Human has been mapped to dNdS_1
+Branch set Nonhuman has been mapped to dNdS_1
+
+Fitting summary:
+
+   Log-L = -17650.65553697382
+   d.f   = 229
+   sites = 395
+   AIC   = 35759.31107394764
+   c-AIC = 36397.73531637188
+
+Log Likelihood = -17650.6555369738;
+Shared Parameters:
+GT=0.1278099327540298
+CT=1.18973076123485
+AC=0.171301240357101
+CG=0.1476101298736069
+AT=0.08162213090076664
+dNdS_1=0.03061635871199743
+
+Tree theTree=(AB499614_Human_Turkey_2005_11_24_Rotavirus_C_Strain_NULL_VP6:0.002895070901814718,((((EF641110_Human_Thailand_NULL_Rotavirus_C_Strain_NULL_VP6:0.001933922574106114,GU199224_Human_South:0.001933305770531353)Node5:0.0009563479790049057,(((JA398217_Human_NULL_NULL_Rotavirus_C_Strain_NULL_VP6:0.00676609633488165,(((AM118018_Human_Spain_NULL_Rotavirus_C_Strain_NULL_VP6:0.00388129127571087,(AM118020_Human_Spain_NULL_Rotavirus_C_Strain_NULL_VP6:0.001007785308692465,GU592518_Human_Russia_2008_04_XX_Rotavirus_C_Strain_NULL_VP6:0.009701931722280581)Node16:0.0009791875275737673)Node14:0.005944105720195787,(JA398211_Human_NULL_NULL_Rotavirus_C_Strain_NULL_VP6:0.0009258824141138472,M94156_Human_NULL_NULL_Rotavirus_C_Strain_NULL_VP6:0.002919267012208487)Node19:0.0008528379596392238)Node13:0.005710059061428424,(AF325806_Human_NULL_NULL_Rotavirus_C_Strain_NULL_VP6:0.01901951136817857,M94155_Human_NULL_NULL_Rotavirus_C_Strain_NULL_VP6:0.01081307380834556)Node22:0.009393567485963927)Node12:0.004339712491989162)Node10:0,JA398227_Human_NULL_NULL_Rotavirus_C_Strain_NULL_VP6:0)Node9:0,(((((((AY770980_Human_India_NULL_Rotavirus_C_Strain_NULL_VP6:0.000918282778036902,AY795898_Human_India_NULL_Rotavirus_C_Strain_NULL_VP6:0)Node32:0.001864705990790482,AY786571_Human_India_NULL_Rotavirus_C_Strain_NULL_VP6:0.0009185867089851618)Node31:0.0008584756910616176,KT206195_Human_Italy_2012_XX_XX_Rotavirus_C_Strain_G4P_2__VP6:0.01047331732997357)Node30:0.003854000783007256,((AY786570_Human_India_NULL_Rotavirus_C_Strain_NULL_VP6:0.003830008487206179,(GU592517_Human_Russia_2008_05_XX_Rotavirus_C_Strain_NULL_VP6:0.002852576009387641,(((GU592519_Human_Russia_2009_03_XX_Rotavirus_C_Strain_NULL_VP6:0.0009205252974964887,KP735976_Human_Russia_2009_02_21_Rotavirus_C_Strain_NULL_VP6:0.00184806644008414)Node44:0.0009191117178482705,KP735972_Human_Russia_2008_04_23_Rotavirus_C_Strain_NULL_VP6:0.001831593703806852)Node43:0,JN934895_Human_Russia_2008_05_XX_Rotavirus_C_Strain_NULL_VP6:0)Node42:0.0008301449448843675)Node40:0.008786743262414643)Node38:0.001862656556472509,(HQ185636_Human_Bangladesh_2005_XX_XX_Rotavirus_C_Strain_NULL_VP6:0.001788636463354858,HQ896714_Human_South:0.007822921162950905)Node49:0.00786190598592826)Node37:0.0009394653073817489)Node29:0,AM118019_Human_Spain_NULL_Rotavirus_C_Strain_NULL_VP6:0.006723823387287753)Node28:0.003906051903799601,(AF325805_Human_NULL_NULL_Rotavirus_C_Strain_NULL_VP6:0.007874943531925938,((((((((((AB889499_Pig_Japan_2008_07_23_Rotavirus_C_Strain_NULL_VP6:0.0009847949085854113,AB889500_Pig_Japan_2008_07_23_Rotavirus_C_Strain_NULL_VP6:0.0006696058417456425)Node64:0.06091024891630691,AB889503_Pig_Japan_2008_09_05_Rotavirus_C_Strain_NULL_VP6:0.05838259489764933)Node63:0.00545651416866653,((AB889504_Pig_Japan_2008_10_01_Rotavirus_C_Strain_G7P_X__VP6:0.001724601281266484,AB889505_Pig_Japan_2008_10_01_Rotavirus_C_Strain_G10P_X__VP6:0)Node69:0.05938190024486262,(AB889508_Pig_Japan_2008_10_16_Rotavirus_C_Strain_NULL_VP6:0.003505957333333227,AB889509_Pig_Japan_2009_03_18_Rotavirus_C_Strain_NULL_VP6:0.006335491031091655)Node72:0.05329666191592763)Node68:0.006656334109694744)Node62:0.03748824737407287,AB889511_Pig_Japan_2002_05_XX_Rotavirus_C_Strain_NULL_VP6:0.07020958781877269)Node61:0.003094092067127589,(AB889501_Pig_Japan_2008_07_23_Rotavirus_C_Strain_NULL_VP6:0.05832915159837813,(((AB889514_Pig_Japan_2002_06_XX_Rotavirus_C_Strain_NULL_VP6:0.05687626639646991,((((HQ323753_Pig_South:0.04628034658024025,KJ814477_Pig_South:0.02085186681447599)Node85:0.005148908459997092,HQ833829_Pig_South:0.02727003568616706)Node84:0.02290768035369748,AB889520_Pig_Japan_2003_10_XX_Rotavirus_C_Strain_NULL_VP6:0.06707050037094005)Node83:0.007725966373719292,AB889518_Pig_Japan_2002_11_XX_Rotavirus_C_Strain_NULL_VP6:0.06808783625270654)Node82:0.005797389233046465)Node80:0.00782370365589485,AB889519_Pig_Japan_2003_08_XX_Rotavirus_C_Strain_NULL_VP6:0.07221089112534268)Node79:0.002068931151934814,AB889502_Pig_Japan_2008_09_05_Rotavirus_C_Strain_G2P_X__VP6:0.05127870724856975)Node78:0.001673143827869541)Node76:0.002824637813977142)Node60:0.08824324447267458,((KF036283_Pig_Czech:0.003633656221585498,(KF036284_Pig_Czech:0,KF036288_Pig_Czech:0.0008971875609458463)Node96:0)Node94:0.1004078873807261,((((KF036285_Pig_Czech:0,KF036286_Pig_Czech:0)Node102:0.06475036865450887,(KM099254_Pig_Czech:0.004430435794523988,KM099255_Pig_Czech:0)Node105:0.1054528884509237)Node101:0.01648986265204456,KM099256_Pig_Czech:0.0858800461073357)Node100:0.01787405763702656,KF036289_Pig_Czech:0.06939689150950222)Node99:0.06152654178429905)Node93:0.01928425739551708)Node59:0.05289495037325345,((AB889507_Pig_Japan_2008_10_16_Rotavirus_C_Strain_NULL_VP6:0.1280991003738238,((AB889515_Pig_Japan_2002_09_XX_Rotavirus_C_Strain_NULL_VP6:0.0639226652861009,((KF036281_Pig_Czech:0.007862090756694739,KF036282_Pig_Czech:0.004208856353309211)Node117:0.03841669259287728,(KC164674_Pig_USA_2011_07_22_Rotavirus_C_Strain_NULL_VP6:0,KC164677_Pig_USA_2011_12_XX_Rotavirus_C_Strain_NULL_VP6:0.0008300331519003008)Node120:0.0364361815771992)Node116:0.007556812541979441)Node114:0.008434792564585738,(((JF810447_Pig_Brazil_2007_05_XX_Rotavirus_C_Strain_NULL_VP6:0.006629669432272897,((KT281839_Pig_Brazil_2012_XX_XX_Rotavirus_C_Strain_NULL_VP6:0.009211206201660245,(KT281831_Pig_Brazil_2012_XX_XX_Rotavirus_C_Strain_NULL_VP6:0.01013401182128854,KT281828_Pig_Brazil_2012_XX_XX_Rotavirus_C_Strain_NULL_VP6:0.01947347385009395)Node130:0.003475358400442866)Node128:0.002006166124016493,KT281836_Pig_Brazil_2013_XX_XX_Rotavirus_C_Strain_NULL_VP6:0.02417509939073517)Node127:0.005938279925232519)Node125:0.002198191929897099,KT281830_Pig_Brazil_2012_XX_XX_Rotavirus_C_Strain_NULL_VP6:0.01815720062311959)Node124:0.01484478396901908,JF810453_Pig_Brazil_2010_06_XX_Rotavirus_C_Strain_NULL_VP6:0.03379394347406252)Node123:0.04653590851216674)Node113:0.07468047287574618)Node111:0.01841237999152113,(JF810441_Pig_Brazil_2008_12_XX_Rotavirus_C_Strain_NULL_VP6:0.07370926489532549,((((JF810443_Pig_Brazil_2004_08_XX_Rotavirus_C_Strain_NULL_VP6:0.04581993872282056,KT281827_Pig_Brazil_2011_XX_XX_Rotavirus_C_Strain_NULL_VP6:0.067433768725972)Node141:0,(KJ814480_Pig_South:0.02969534968128151,((KJ814481_Pig_South:0,KJ814482_Pig_South:0.0008732585907139643)Node147:0.002046598443738301,KJ814483_Pig_South:0.006030233014404793)Node146:0.05967628742145654)Node144:0.02241091530517047)Node140:0.005332099540166138,JF810444_Pig_Brazil_2004_10_XX_Rotavirus_C_Strain_NULL_VP6:0.1397281368292782)Node139:0.005257463984482032,JF810445_Pig_Brazil_2005_05_XX_Rotavirus_C_Strain_NULL_VP6:0.05772151276068876)Node138:0.02275117365029761)Node136:0.0696416593826281)Node110:0.08210649354695095)Node58:0.02748046160905307,(KM099257_Pig_Czech:0.0009049080369290387,KM099258_Pig_Czech:0)Node153:0.1809532147053674)Node57:0.007034048147964969,((((((AB889510_Pig_Japan_2010_03_25_Rotavirus_C_Strain_NULL_VP6:0.05817861867778765,AB889512_Pig_Japan_2002_05_XX_Rotavirus_C_Strain_NULL_VP6:0.0500935309215756)Node161:0.02488327004496594,AB889513_Pig_Japan_2002_05_XX_Rotavirus_C_Strain_NULL_VP6:0.03632770006367073)Node160:0.01227601308220058,AB889516_Pig_Japan_2002_10_XX_Rotavirus_C_Strain_NULL_VP6:0.05111836519057059)Node159:0.02011198677319047,AB889517_Pig_Japan_2002_10_XX_Rotavirus_C_Strain_NULL_VP6:0.08081470195168211)Node158:0.02479940322055489,((((JF810455_Pig_Brazil_2010_11_XX_Rotavirus_C_Strain_NULL_VP6:0,JF810454_Pig_Brazil_2010_11_XX_Rotavirus_C_Strain_NULL_VP6:0.0009038532483241164)Node170:0.01944845302527526,KT281832_Pig_Brazil_2013_XX_XX_Rotavirus_C_Strain_NULL_VP6:0.03633423679478353)Node169:0.003639431474210974,(KT281841_Pig_Brazil_2014_XX_XX_Rotavirus_C_Strain_NULL_VP6:0.04295637094374766,(KT281833_Pig_Brazil_2013_XX_XX_Rotavirus_C_Strain_NULL_VP6:0.0389370557992515,((((KT281829_Pig_Brazil_2012_XX_XX_Rotavirus_C_Strain_NULL_VP6:0.02720697131176758,KT281840_Pig_Brazil_2013_XX_XX_Rotavirus_C_Strain_NULL_VP6:0.03129465796557596)Node181:0.00152459012226114,KT281834_Pig_Brazil_2013_XX_XX_Rotavirus_C_Strain_NULL_VP6:0.0219569600969131)Node180:0.01020179597781598,(KT281835_Pig_Brazil_2013_XX_XX_Rotavirus_C_Strain_NULL_VP6:0.03632073649817649,KT281837_Pig_Brazil_2014_XX_XX_Rotavirus_C_Strain_NULL_VP6:0.03806586857759716)Node185:0.01049707604892479)Node179:0.03671789216372212,JF810451_Pig_Brazil_2010_07_XX_Rotavirus_C_Strain_NULL_VP6:0.06551763815866114)Node178:0.006959821608619729)Node176:0.00613252505169237)Node174:0.005250728799833123)Node168:0.01043570643504464,KT281838_Pig_Brazil_2014_XX_XX_Rotavirus_C_Strain_NULL_VP6:0.06941573434526598)Node167:0.06034274251310864)Node157:0.01923430377314622,(M94157_Pig_NULL_NULL_Rotavirus_C_Strain_NULL_VP6:0.03046289989713012,JF810442_Pig_Brazil_2004_08_XX_Rotavirus_C_Strain_NULL_VP6:0.07596128144238909)Node190:0.007317129860084457)Node156:0.08934321803097463)Node56:0.08044278091924212,(KJ814478_Pig_South:0.02217261238857039,KJ814479_Pig_South:0.03501025222657852)Node193:0.310777826849258)Node55:0.3003739515098877)Node53:0.004057937022030517)Node27:0.001123469024690381,(JA398215_Human_NULL_NULL_Rotavirus_C_Strain_NULL_VP6:0.008056383991137219,AB533508_Human_Japan_2006_XX_XX_Rotavirus_C_Strain_NULL_VP6:0.008536109423813649)Node196:0.002851584001004258)Node26:0.0006879442917468039)Node8:0.006780474756879364)Node4:0.0009441870381742243,((HQ185656_Human_China_2007_XX_XX_Rotavirus_C_Strain_NULL_VP6:0,(KT284781_Human_South:0.001951846715777301,KM886901_Human_South:0)Node202:0.001934138492697097)Node200:0,(((AB533513_Human_Japan_2009_XX_XX_Rotavirus_C_Strain_NULL_VP6:0,(KP342039_Human_China_2011_XX_XX_Rotavirus_C_Strain_NULL_VP6:0.001903259356736279,KT355391_Human_South:0)Node209:0.001921693325791677)Node207:0.001927668045065903,(KP342028_Human_China_2011_XX_XX_Rotavirus_C_Strain_NULL_VP6:0.004946789880116135,(AB740140_Human_Japan_2012_XX_XX_Rotavirus_C_Strain_NULL_VP6:0.0009512858199660815,AB740143_Human_Japan_2012_XX_XX_Rotavirus_C_Strain_NULL_VP6:0)Node214:0.002878595475026686)Node212:0.002974789866877648)Node206:0,((KP776603_Human_Hungary_2013_XX_XX_Rotavirus_C_Strain_G4P_2__VP6:0,KP776604_Human_Hungary_2013_XX_XX_Rotavirus_C_Strain_G4P_2__VP6:0.0009624698433359685)Node218:0.001929633147790774,AB648915_Human_Japan_2011_XX_XX_Rotavirus_C_Strain_NULL_VP6:0.002899089413790012)Node217:0)Node205:0)Node199:0.00289650821190526)Node3:0.0009805038545616692,HQ185667_Human_Japan_2003_XX_XX_Rotavirus_C_Strain_NULL_VP6:0.00390518495286479)Node2:0.0009668646396113299,KT206184_Human_Italy_2004_XX_XX_Rotavirus_C_Strain_G4P_2__VP6:0.0009597534702205971);

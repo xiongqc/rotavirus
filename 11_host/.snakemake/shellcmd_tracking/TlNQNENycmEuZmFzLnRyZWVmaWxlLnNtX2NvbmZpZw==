@@ -1,0 +1,11 @@
+echo '3
+6
+/home/simon/Projects/rotavirus/rotavirus/11_host/NSP4Crra.fas.treefile
+2
+Human
+y
+Human
+Nonhuman
+/home/simon/Projects/rotavirus/rotavirus/11_host/NSP4Crra.fas.treefile.sm
+1
+' > NSP4Crra.fas.treefile.sm_config

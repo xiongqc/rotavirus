@@ -1,0 +1,28 @@
+IDS, = glob_wildcards("{id}.longseq")
+
+HYPHY = "/usr/local/bin/HYPHYMP"
+
+rule all:
+  input:
+    expand("{id}.longseq.clean",id=IDS)
+
+rule cleanseqs_file:
+  input:
+    "{d1}"
+  output:
+    temp("{d1}.clean_config")
+  params:
+    outname = "{d1}.clean", pwd = workflow.basedir
+  shell:
+    "echo '4\n6\n1\n{params.pwd}/{input}\n4\n{params.pwd}/{params.outname}\n' > {output}"
+
+
+rule cleanseqs:
+  input:
+    ["{d1}","{d1}.clean_config"]
+  output:
+    "{d1}.clean"
+  shell:
+    "{HYPHY} < {input[1]}"
+
+
