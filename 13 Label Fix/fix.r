@@ -9,7 +9,7 @@ base <- read.dna("NSP3Arra.fas",format="fasta",as.matrix=FALSE)
 #names(base)
 i=1
 sametitle <- match(names(base),names(seq))
-while (i < 101)
+while (i < 99999)
 {
   if (is.element(i, sametitle) == FALSE)
   {
