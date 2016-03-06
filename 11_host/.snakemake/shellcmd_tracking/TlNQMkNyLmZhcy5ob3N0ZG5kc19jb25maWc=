@@ -1,0 +1,9 @@
+echo '3
+2
+1
+/home/simon/Projects/rotavirus/rotavirus/11_host/NSP2Cr.fas
+1
+012345
+/home/simon/Projects/rotavirus/rotavirus/11_host/NSP2Cr.fas.treefile.sm
+3
+' > NSP2Cr.fas.hostdnds_config

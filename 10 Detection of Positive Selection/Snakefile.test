@@ -1,4 +1,4 @@
-IDS, = glob_wildcards("{id}.fas.nonn.orf.revalign.dedup.trimorf.longseq")
+IDS, = glob_wildcards("{id}.clean")
 
 #rule all:
 #    input:
@@ -6,7 +6,7 @@ IDS, = glob_wildcards("{id}.fas.nonn.orf.revalign.dedup.trimorf.longseq")
 
 rule all:
     input:
-        expand(["{id}.fas.nonn.orf.revalign.dedup.trimorf.longseq.iqtree","{id}.fas.nonn.orf.revalign.dedup.trimorf.longseq.treefile","{id}.fas.nonn.orf.revalign.dedup.trimorf.longseq.mldist","{id}.fas.nonn.orf.revalign.dedup.trimorf.longseq.log"],id=IDS)
+        expand(["{id}.clean.iqtree","{id}.clean.treefile","{id}.clean.mldist","{id}.clean.log"],id=IDS)
 
 #rule all:
 #    input:
