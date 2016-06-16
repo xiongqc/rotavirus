@@ -1,0 +1,9 @@
+problems:
+
+dates
+years
+null dates
+
+
+initial rate: 0.00005
+https://books.google.co.uk/books?id=BBPOBQAAQBAJ&pg=PA793&lpg=PA793&dq=rotavirus+mutation+rate&source=bl&ots=GavHTya80w&sig=K1U7FJu7c_FrmE8zAzbAkvBOY00&hl=en&sa=X&ved=0ahUKEwjYj-62zovLAhWDKh4KHWOCDFwQ6AEISDAF#v=onepage&q=rotavirus%20mutation%20rate&f=false

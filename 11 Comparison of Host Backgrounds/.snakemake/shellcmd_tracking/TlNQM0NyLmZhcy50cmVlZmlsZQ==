@@ -1,1 +1,0 @@
-iqtree-omp -s NSP3Cr.fas -st CODON -m MG+F3x4+R4 -seed 1234 -nt 2 

@@ -1,0 +1,174 @@
+IQ-TREE 1.3.13 built Jan 28 2016
+
+Input file name: NSP5Br.fas
+Type of analysis: tree reconstruction
+Random seed number: 1234
+
+REFERENCES
+----------
+
+To cite IQ-TREE please use:
+
+Lam-Tung Nguyen, Heiko A. Schmidt, Arndt von Haeseler, and Bui Quang Minh (2015)
+IQ-TREE: A fast and effective stochastic algorithm for estimating
+maximum likelihood phylogenies. Mol. Biol. Evol., 32:268-274.
+
+SEQUENCE ALIGNMENT
+------------------
+
+Input data: 44 sequences with 175 codon sites
+Number of constant sites: 5 (= 2.85714% of all sites)
+Number of site patterns: 175
+
+SUBSTITUTION PROCESS
+--------------------
+
+Model of substitution: MG+F3X4+R4
+
+State frequencies: 
+  pi(AAA) = 0.0699  pi(AAC) = 0.0258  pi(AAG) = 0.0287  pi(AAT) = 0.0537
+  pi(ACA) = 0.0366  pi(ACC) = 0.0135  pi(ACG) = 0.0150  pi(ACT) = 0.0281
+  pi(AGA) = 0.0193  pi(AGC) = 0.0071  pi(AGG) = 0.0079  pi(AGT) = 0.0148
+  pi(ATA) = 0.0354  pi(ATC) = 0.0131  pi(ATG) = 0.0145  pi(ATT) = 0.0272
+  pi(CAA) = 0.0225  pi(CAC) = 0.0083  pi(CAG) = 0.0092  pi(CAT) = 0.0173
+  pi(CCA) = 0.0118  pi(CCC) = 0.0043  pi(CCG) = 0.0048  pi(CCT) = 0.0090
+  pi(CGA) = 0.0062  pi(CGC) = 0.0023  pi(CGG) = 0.0025  pi(CGT) = 0.0048
+  pi(CTA) = 0.0114  pi(CTC) = 0.0042  pi(CTG) = 0.0047  pi(CTT) = 0.0088
+  pi(GAA) = 0.0560  pi(GAC) = 0.0207  pi(GAG) = 0.0230  pi(GAT) = 0.0430
+  pi(GCA) = 0.0293  pi(GCC) = 0.0108  pi(GCG) = 0.0120  pi(GCT) = 0.0225
+  pi(GGA) = 0.0154  pi(GGC) = 0.0057  pi(GGG) = 0.0063  pi(GGT) = 0.0118
+  pi(GTA) = 0.0284  pi(GTC) = 0.0105  pi(GTG) = 0.0116  pi(GTT) = 0.0218
+  pi(TAA) = 0.0001  pi(TAC) = 0.0113  pi(TAG) = 0.0001  pi(TAT) = 0.0235
+  pi(TCA) = 0.0160  pi(TCC) = 0.0059  pi(TCG) = 0.0066  pi(TCT) = 0.0123
+  pi(TGA) = 0.0001  pi(TGC) = 0.0031  pi(TGG) = 0.0035  pi(TGT) = 0.0065
+  pi(TTA) = 0.0155  pi(TTC) = 0.0057  pi(TTG) = 0.0064  pi(TTT) = 0.0119
+
+Model of rate heterogeneity: FreeRate with 4 categories
+Site proportion and rates:  (0.0828,0.0970) (0.4688,0.5256) (0.4070,1.3749) (0.0415,4.4867)
+
+ Category  Relative_rate  Proportion
+  1         0.0970         0.0828
+  2         0.5256         0.4688
+  3         1.3749         0.4070
+  4         4.4867         0.0415
+
+MAXIMUM LIKELIHOOD TREE
+-----------------------
+
+Log-likelihood of the tree: -6338.4299 (s.e. 221.0046)
+Unconstrained log-likelihood (without tree): -903.8375
+Number of free parameters (#branches + #model parameters): 101
+Akaike information criterion (AIC) score: 12878.8598
+Corrected Akaike information criterion (AICc) score: 13161.1063
+Bayesian information criterion (BIC) score: 13198.5031
+
+Total tree length (sum of branch lengths): 26.7299
+Sum of internal branch lengths: 19.1786 (71.7494% of tree length)
+
+WARNING: 2 near-zero internal branches (<0.0057) should be treated with caution
+         Such branches are denoted by '**' in the figure below
+
+NOTE: Tree is UNROOTED although outgroup taxon 'AB713973_Pig_Japan_2008_10_XX_Rotavirus_B_Strain_NULL_NSP5' is drawn at root
+
+NOTE: Branch lengths are intepreted as number of nucleotide substitutions per codon site!
+      Rescale them by 1/3 if you want to have #nt substitutions per nt site
+
++--AB713973_Pig_Japan_2008_10_XX_Rotavirus_B_Strain_NULL_NSP5
+|
+|  +--KJ613661_Pig_India_2009_03_16_Rotavirus_B_Strain_G7P_X__NSP5
++--|
+|  |     +--AB713990_Pig_Japan_2007_08_XX_Rotavirus_B_Strain_NULL_NSP5
+|  |  +--|
+|  |  |  +--AB713991_Pig_Japan_2008_09_XX_Rotavirus_B_Strain_NULL_NSP5
+|  +--|
+|     +--AB713992_Pig_Japan_2009_02_XX_Rotavirus_B_Strain_NULL_NSP5
+|
+|        +**AB713993_Pig_Japan_2008_10_XX_Rotavirus_B_Strain_NULL_NSP5
+|     +--|
+|     |  |                                                                 +--AB713974_Pig_Japan_2009_04_XX_Rotavirus_B_Strain_NULL_NSP5
+|     |  |                                                              +--|
+|     |  |                                                              |  +--AB713986_Pig_Japan_2007_08_XX_Rotavirus_B_Strain_NULL_NSP5
+|     |  |                                                           +--|
+|     |  |                                                           |  |  +**AB713982_Pig_Japan_2007_08_XX_Rotavirus_B_Strain_NULL_NSP5
+|     |  |                                                           |  +--|
+|     |  |                                                           |     +--AB713987_Pig_Japan_2008_10_XX_Rotavirus_B_Strain_NULL_NSP5
+|     |  |                                                        +--|
+|     |  |                                                        |  +--AB713988_Pig_Japan_2009_03_XX_Rotavirus_B_Strain_NULL_NSP5
+|     |  |                                                     +--|
+|     |  |                                                     |  +--AB713978_Pig_Japan_2002_09_XX_Rotavirus_B_Strain_NULL_NSP5
+|     |  |                                                  +--|
+|     |  |                                                  |  |                 +**AB713984_Pig_Japan_2007_08_XX_Rotavirus_B_Strain_NULL_NSP5
+|     |  |                                                  |  |              +--|
+|     |  |                                                  |  |              |  +--AB713985_Pig_Japan_2007_08_XX_Rotavirus_B_Strain_NULL_NSP5
+|     |  |                                                  |  |           +--|
+|     |  |                                                  |  |           |  +--AB713989_Pig_Japan_2009_03_XX_Rotavirus_B_Strain_NULL_NSP5
+|     |  |                                                  |  |        +--|
+|     |  |                                                  |  |        |  +--AB713981_Pig_Japan_2007_08_XX_Rotavirus_B_Strain_NULL_NSP5
+|     |  |                                                  |  |     +--|
+|     |  |                                                  |  |     |  |  +--AB713977_Pig_Japan_2002_08_XX_Rotavirus_B_Strain_NULL_NSP5
+|     |  |                                                  |  |     |  +--|
+|     |  |                                                  |  |     |     |     +**KJ613663_Pig_India_2013_09_04_Rotavirus_B_Strain_NULL_NSP5
+|     |  |                                                  |  |     |     |  +--|
+|     |  |                                                  |  |     |     |  |  +**KJ613664_Pig_India_2013_09_04_Rotavirus_B_Strain_NULL_NSP5
+|     |  |                                                  |  |     |     +--|
+|     |  |                                                  |  |     |        +--AB713979_Pig_Japan_2002_09_XX_Rotavirus_B_Strain_NULL_NSP5
+|     |  |                                                  |  |  +--|
+|     |  |                                                  |  |  |  |  +--AB713980_Pig_Japan_2003_05_XX_Rotavirus_B_Strain_NULL_NSP5
+|     |  |                                                  |  |  |  +--|
+|     |  |                                                  |  |  |     +--KR052713_Pig_USA_NULL_Rotavirus_B_Strain_GXP_X__NSP5
+|     |  |                                                  |  +--|
+|     |  |                                                  |     +--KJ613660_Pig_India_2009_03_16_Rotavirus_B_Strain_G7P_X__NSP5
+|     |  |                                           +------|
+|     |  |                                           |      +--AB713975_Pig_Japan_2001_04_XX_Rotavirus_B_Strain_NULL_NSP5
+|     |  |                                       +---|
+|     |  |                                       |   |     +--AB713976_Pig_Japan_2002_05_XX_Rotavirus_B_Strain_NULL_NSP5
+|     |  |                                       |   +-----|
+|     |  |                                       |         +---AB713983_Pig_Japan_2007_08_XX_Rotavirus_B_Strain_G4P_X__NSP5
+|     |  +---------------------------------------|
+|     |                                          |          +--AF206724_Human_NULL_NULL_Rotavirus_B_Strain_NULL_NSP5
+|     |                                          |       +--|
+|     |                                          |       |  |        +--AY238394_Human_NULL_NULL_Rotavirus_B_Strain_NULL_NSP5
+|     |                                          |       |  |     +--|
+|     |                                          |       |  |     |  |  +**GU391311_Human_Bangladesh_2002_03_XX_Rotavirus_B_Strain_NULL_NSP5
+|     |                                          |       |  |     |  +--|
+|     |                                          |       |  |     |     +--JQ904284_Human_India_2009_09_XX_Rotavirus_B_Strain_NULL_NSP5
+|     |                                          |       |  |  +--|
+|     |                                          |       |  |  |  |           +--GU370060_Human_Myanmar_2007_11_XX_Rotavirus_B_Strain_NULL_NSP5
+|     |                                          |       |  |  |  |        +--|
+|     |                                          |       |  |  |  |        |  |     +--GU377223_Human_India_2008_01_XX_Rotavirus_B_Strain_NULL_NSP5
+|     |                                          |       |  |  |  |        |  |  +--|
+|     |                                          |       |  |  |  |        |  |  |  |        +**JQ904286_Human_India_2010_03_XX_Rotavirus_B_Strain_NULL_NSP5
+|     |                                          |       |  |  |  |        |  |  |  |     +--|
+|     |                                          |       |  |  |  |        |  |  |  |     |  +--JQ904288_Human_India_2010_04_XX_Rotavirus_B_Strain_NULL_NSP5
+|     |                                          |       |  |  |  |        |  |  |  |  +**|
+|     |                                          |       |  |  |  |        |  |  |  |  |  +--JQ904289_Human_India_2010_06_XX_Rotavirus_B_Strain_NULL_NSP5
+|     |                                          |       |  |  |  |        |  |  |  +--|
+|     |                                          |       |  |  |  |        |  |  |     +--KP753133_Human_Senegal_2010_12_20_Rotavirus_B_Strain_GXP_X__NSP5
+|     |                                          |       |  |  |  |        |  +--|
+|     |                                          |       |  |  |  |        |     +--JQ904285_Human_India_2009_10_XX_Rotavirus_B_Strain_NULL_NSP5
+|     |                                          |       |  |  |  |     +--|
+|     |                                          |       |  |  |  |     |  +--JQ904280_Human_India_2004_02_XX_Rotavirus_B_Strain_NULL_NSP5
+|     |                                          |       |  |  |  |  +--|
+|     |                                          |       |  |  |  |  |  +--JQ904282_Human_India_2006_10_XX_Rotavirus_B_Strain_NULL_NSP5
+|     |                                          |       |  |  |  +--|
+|     |                                          |       |  |  |     +**JQ904278_Human_India_2000_10_XX_Rotavirus_B_Strain_NULL_NSP5
+|     |                                          |       |  +**|
+|     |                                          |       |     +**JQ904277_Human_India_1995_11_XX_Rotavirus_B_Strain_NULL_NSP5
+|     |                                          +-------|
+|     |                                                  +--AY217765_Human_NULL_NULL_Rotavirus_B_Strain_NULL_NSP5
+|  +--|
+|  |  +--AB713994_Pig_Japan_2008_10_XX_Rotavirus_B_Strain_NULL_NSP5
++--|
+   +--KJ613665_Pig_India_2013_12_05_Rotavirus_B_Strain_NULL_NSP5
+
+Tree in newick format:
+
+(AB713973_Pig_Japan_2008_10_XX_Rotavirus_B_Strain_NULL_NSP5:0.214049,(KJ613661_Pig_India_2009_03_16_Rotavirus_B_Strain_G7P_X__NSP5:0.198010,((AB713990_Pig_Japan_2007_08_XX_Rotavirus_B_Strain_NULL_NSP5:0.015255,AB713991_Pig_Japan_2008_09_XX_Rotavirus_B_Strain_NULL_NSP5:0.072321):0.346378,AB713992_Pig_Japan_2009_02_XX_Rotavirus_B_Strain_NULL_NSP5:0.258352):0.810476):0.168208,(((AB713993_Pig_Japan_2008_10_XX_Rotavirus_B_Strain_NULL_NSP5:0.000002,((((((((AB713974_Pig_Japan_2009_04_XX_Rotavirus_B_Strain_NULL_NSP5:0.129218,AB713986_Pig_Japan_2007_08_XX_Rotavirus_B_Strain_NULL_NSP5:0.274806):0.048537,(AB713982_Pig_Japan_2007_08_XX_Rotavirus_B_Strain_NULL_NSP5:0.000002,AB713987_Pig_Japan_2008_10_XX_Rotavirus_B_Strain_NULL_NSP5:0.069580):0.175502):0.039741,AB713988_Pig_Japan_2009_03_XX_Rotavirus_B_Strain_NULL_NSP5:0.279344):0.014364,AB713978_Pig_Japan_2002_09_XX_Rotavirus_B_Strain_NULL_NSP5:0.178536):0.052924,((((((AB713984_Pig_Japan_2007_08_XX_Rotavirus_B_Strain_NULL_NSP5:0.000002,AB713985_Pig_Japan_2007_08_XX_Rotavirus_B_Strain_NULL_NSP5:0.006484):0.451279,AB713989_Pig_Japan_2009_03_XX_Rotavirus_B_Strain_NULL_NSP5:0.232160):0.203365,AB713981_Pig_Japan_2007_08_XX_Rotavirus_B_Strain_NULL_NSP5:0.868287):0.056482,(AB713977_Pig_Japan_2002_08_XX_Rotavirus_B_Strain_NULL_NSP5:0.176281,((KJ613663_Pig_India_2013_09_04_Rotavirus_B_Strain_NULL_NSP5:0.000002,KJ613664_Pig_India_2013_09_04_Rotavirus_B_Strain_NULL_NSP5:0.000002):0.327326,AB713979_Pig_Japan_2002_09_XX_Rotavirus_B_Strain_NULL_NSP5:0.570396):0.097885):0.179805):0.082450,(AB713980_Pig_Japan_2003_05_XX_Rotavirus_B_Strain_NULL_NSP5:0.564194,KR052713_Pig_USA_NULL_Rotavirus_B_Strain_GXP_X__NSP5:0.579079):0.098320):0.065844,KJ613660_Pig_India_2009_03_16_Rotavirus_B_Strain_G7P_X__NSP5:0.518683):0.158364):0.085555,AB713975_Pig_Japan_2001_04_XX_Rotavirus_B_Strain_NULL_NSP5:0.193784):1.746368,(AB713976_Pig_Japan_2002_05_XX_Rotavirus_B_Strain_NULL_NSP5:0.380467,AB713983_Pig_Japan_2007_08_XX_Rotavirus_B_Strain_G4P_X__NSP5:0.936764):1.528098):0.902271,((AF206724_Human_NULL_NULL_Rotavirus_B_Strain_NULL_NSP5:0.062412,(((AY238394_Human_NULL_NULL_Rotavirus_B_Strain_NULL_NSP5:0.006980,(GU391311_Human_Bangladesh_2002_03_XX_Rotavirus_B_Strain_NULL_NSP5:0.000002,JQ904284_Human_India_2009_09_XX_Rotavirus_B_Strain_NULL_NSP5:0.014065):0.014036):0.014404,((((GU370060_Human_Myanmar_2007_11_XX_Rotavirus_B_Strain_NULL_NSP5:0.007011,((GU377223_Human_India_2008_01_XX_Rotavirus_B_Strain_NULL_NSP5:0.013950,(((JQ904286_Human_India_2010_03_XX_Rotavirus_B_Strain_NULL_NSP5:0.000002,JQ904288_Human_India_2010_04_XX_Rotavirus_B_Strain_NULL_NSP5:0.006939):0.006953,JQ904289_Human_India_2010_06_XX_Rotavirus_B_Strain_NULL_NSP5:0.007006):0.000002,KP753133_Human_Senegal_2010_12_20_Rotavirus_B_Strain_GXP_X__NSP5:0.006961):0.006925):0.014328,JQ904285_Human_India_2009_10_XX_Rotavirus_B_Strain_NULL_NSP5:0.028509):0.006791):0.028665,JQ904280_Human_India_2004_02_XX_Rotavirus_B_Strain_NULL_NSP5:0.006865):0.013958,JQ904282_Human_India_2006_10_XX_Rotavirus_B_Strain_NULL_NSP5:0.021165):0.014030,JQ904278_Human_India_2000_10_XX_Rotavirus_B_Strain_NULL_NSP5:0.000002):0.028731):0.006855,JQ904277_Human_India_1995_11_XX_Rotavirus_B_Strain_NULL_NSP5:0.000002):0.003505):0.306512,AY217765_Human_NULL_NULL_Rotavirus_B_Strain_NULL_NSP5:0.103865):1.965948):9.049912):0.006607,AB713994_Pig_Japan_2008_10_XX_Rotavirus_B_Strain_NULL_NSP5:0.006520):0.212451,KJ613665_Pig_India_2013_12_05_Rotavirus_B_Strain_NULL_NSP5:0.215733):0.165735);
+
+TIME STAMP
+----------
+
+Date and time: Wed Mar  2 16:10:12 2016
+Total CPU time used: 1874.62 seconds (0h:31m:14s)
+Total wall-clock time used: 1829.22 seconds (0h:30m:29s)
+

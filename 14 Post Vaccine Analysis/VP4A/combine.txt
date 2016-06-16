@@ -1,2 +1,0 @@
-cd C:\rotavirus\14_Post_Vaccine_Analysis\VP4A
-cat *.fas > C:\rotavirus\14_Post_Vaccine_Analysis\VP4A\combined.fasta

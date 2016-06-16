@@ -1,0 +1,13 @@
+downsampled group A parameters
+
+NSP1: 	npatterns = 823
+NSP2: 	npatterns = 448
+NSP3: 	npatterns = 480
+NSP4: 	npatterns = 408
+NSP5: 	npatterns = 300
+VP1: 	npatterns = 1417
+VP2: 	npatterns = 1050
+VP3: 	npatterns = 1187
+VP4: 	npatterns = 1632
+VP6: 	npatterns = 537
+VP7: 	npatterns = 622
