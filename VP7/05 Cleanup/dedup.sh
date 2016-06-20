@@ -1,0 +1,2 @@
+
+python dedup.py 02_RVA_VP7_excLVE_Jan18_derecomb_deN.fas 03_RVA_VP7_excLVE_Jan18_derecomb_deN_deDup.fas
