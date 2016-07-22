@@ -1,0 +1,1 @@
+python orf.py 03_RVA_VP7_excLVE_Jan18_derecomb_deN_deDup.fas > 04_RVA_VP7_excLVE_Jan18_derecomb_deN_deDup_orf.fas

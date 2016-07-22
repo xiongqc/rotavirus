@@ -1,0 +1,1 @@
+python get_orfs_or_cdss.py -i 03_RVA_VP7_excLVE_Jan18_derecomb_deN_deDup.fas -f fasta --table 11 -t CDS -e open -m all -s both --on cds.nuc.fa --op cds.protein.fa --ob cds.bed --og cds.gff3
